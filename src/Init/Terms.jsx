@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         backgroundColor: 'white',
-        marginTop: 18,
         flex: 1
     },
     Body:{
