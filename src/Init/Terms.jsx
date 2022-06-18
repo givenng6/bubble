@@ -2,8 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native';
 import { Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function Terms(){
+export default function Terms({navigation}){
+
+    const onAgree = ()=>{
+        navigation.navigate('UniPicker');
+    }
 
     return(
         <View style = {styles.Home}>
@@ -33,7 +39,7 @@ export default function Terms(){
                 </ScrollView>
             </View>
             <View style = {styles.Agree}>
-                <Button title = 'Agree'/>
+                <Button title = 'Agree' onPress={onAgree}/>
             </View>
         </View>
     );
