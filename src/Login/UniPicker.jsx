@@ -1,4 +1,6 @@
 import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from "react-native";
 import UniCard from "./UniCard";
 
@@ -10,7 +12,7 @@ import ufs from './assets/ufs.png';
 import tut from './assets/tut.png';
 import { ScrollView } from "react-native";
 
-export default function UniPicker(){
+export default function UniPicker({navigation}){
     return(
         <ScrollView style = {styles.Scroll}>
         <View style = {styles.Main}>
@@ -18,7 +20,7 @@ export default function UniPicker(){
                 <Text style = {styles.Title}>Select Your Institution</Text>
             </View>
             <View style = {styles.List}>
-                <UniCard name = 'WITS' logo = {wits}/>
+                <UniCard name = 'WITS' logo = {wits} navigation = {navigation}/>
                 <UniCard name = 'UJ' logo = {uj}/>
                 <UniCard name = 'UCT' logo = {uct}/>
                 <UniCard name = 'UP' logo = {up}/>

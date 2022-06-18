@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Terms from './src/Init/Terms';
 import UniPicker from './src/Login/UniPicker';
+import Login from './src/Login/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ export default function App() {
         options = {{header:()=> null}} />
         <Stack.Screen name="UniPicker" component={UniPicker} 
         options = {{header:()=> null}}/>
+      <Stack.Screen name="Login" component={Login}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

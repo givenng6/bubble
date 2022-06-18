@@ -1,13 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const UniCard = (props)=>{
+
+    const onClick = ()=>{
+        props.navigation.navigate('Login');
+    }
     
     return(
-        <View style = {styles.Main}>
+        <TouchableOpacity style = {styles.Main} onPress = {onClick}>
             <Image style = {styles.Logo} source = {props.logo}/>
             <Text style = {styles.Name}>{props.name}</Text>
-        </View>
+        </TouchableOpacity>
     );
 }
 
