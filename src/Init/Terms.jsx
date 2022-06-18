@@ -10,9 +10,9 @@ export default function Terms(){
             <View style = {styles.Heading}>
                 <Text style = {styles.TextStyle}>Bubble</Text>
             </View>
-            <View style = {styles.Heading}>
+            <View style = {styles.Body}>
                 <ScrollView>
-                <Text style= {styles.Title}>Our Terms of use</Text>
+                <Text style= {styles.Title}>Our Terms of Use</Text>
                 <Text style = {styles.TermsStyle}>Last updated: March 13, 2017
                         (McDonald’s address update: January 18, 2019; non-substantive update for accessibility: May 15, 2019, June 20, 2022: non-material update for privacy-related clarifications)
 
@@ -32,7 +32,7 @@ export default function Terms(){
                         </Text>
                 </ScrollView>
             </View>
-            <View>
+            <View style = {styles.Agree}>
                 <Button title = 'Agree'/>
             </View>
         </View>
@@ -50,20 +50,42 @@ const styles = StyleSheet.create({
     Heading: {
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         backgroundColor: 'white',
-        padding: 12
+        marginTop: 18,
+        flex: 1
+    },
+    Body:{
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: 'white',
+        padding: 12,
+        flex: 5
     },
     TextStyle: {
         fontSize: 32,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontWeight: 'bold'
     },
     TermsStyle: {
         fontSize: 14,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        color: 'gray'
     },
     Title:{
         fontSize: 18,
         //alignSelf: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'gray'
+    },
+    Agree:{
+        display: 'flex',
+        flex: 0.5,
+        alignContent: 'center',
+        backgroundColor: 'white',
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10
+        //flexDirection: 'row-reverse',
     }
 });
