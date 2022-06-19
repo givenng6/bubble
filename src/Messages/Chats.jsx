@@ -4,6 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native";
 import { Dimensions } from 'react-native'
+import ChatThumbnail from "./ChatThumbnail";
 
 export default function Chats(){
     let ScreenHeight = Dimensions.get("window").height;
@@ -20,7 +21,20 @@ export default function Chats(){
                             minHeight: ScreenHeight,
                             height: ScreenHeight,
                             justifyContent: 'center'}}>
-                    <Text>Msg</Text>
+
+
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
                 </View>
             </ScrollView>
 
