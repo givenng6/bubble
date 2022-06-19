@@ -8,6 +8,7 @@ import add from '../assets/add.png';
 
 export default function TopNavBar(props){
 
+    let name = 'A';
     const profileOnClick = ()=>{
         props.navigation.navigate('Profile');
     }
@@ -21,7 +22,7 @@ export default function TopNavBar(props){
                         <Image source={add}/>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.Account} onPress = {profileOnClick}>
-                        <Text style = {styles.Initial}>B</Text>
+                        <Text style = {styles.Initial}>{name}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
