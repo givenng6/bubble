@@ -6,6 +6,7 @@ import Terms from './src/Init/Terms';
 import UniPicker from './src/Login/UniPicker';
 import Login from './src/Login/Login';
 import Home from './src/HomeScreen/Home';
+import SplashScreen from './src/Init/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} 
+          options = {{header:()=> null}} />
         <Stack.Screen name="Terms" component={Terms} 
           options = {{header:()=> null}} />
         <Stack.Screen name="UniPicker" component={UniPicker} 
