@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { Button } from 'react-native';
 import TopNavBar from "./TopNavBar";
 
-export default function Feed({navigation}){
+export default function Explore({navigation}){
 
     return(
         <View >

@@ -1,10 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { TouchableOpacity } from "react-native";
-import { Button } from 'react-native';
+import { TouchableOpacity } from "react-native"; 
+import { Ionicons } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons'; 
 import logo from '../assets/bc.jpeg';
-import add from '../assets/add.png';
-
 
 export default function TopNavBar(props){
 
@@ -19,7 +18,10 @@ export default function TopNavBar(props){
                 <Image style = {styles.Logo} source = {logo}/>
                 <View style = {styles.Items}>
                     <TouchableOpacity>
-                        <Image source={add}/>
+                    <Entypo name="plus" size={40} color="#0b0f17" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style = {styles.Space}>
+                    <Ionicons name="ios-search" size={37} color="#0b0f17" />
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.Account} onPress = {profileOnClick}>
                         <Text style = {styles.Initial}>{name}</Text>
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
         width: 45,
         height: 45,
         borderRadius: 30,
+        marginLeft: 11,
         //borderColor: '#51E5C1'
     },
     Initial:{
@@ -80,6 +83,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         marginRight: 11,
         marginTop: 8
+    },
+    Space:{
+        marginLeft: 11,
     }
 });
 
