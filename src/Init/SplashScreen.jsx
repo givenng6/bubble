@@ -20,9 +20,7 @@ export default function SplashScreen({navigation}){
     return(
         <View style = {styles.Main}>
             <Text style = {styles.Name}>Bubble</Text>
-            {
-                splash()
-            }
+            {splash()}
         </View>
     );
 }
