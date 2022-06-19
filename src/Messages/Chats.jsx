@@ -18,11 +18,22 @@ export default function Chats(){
                             flexDirection: 'row',
                             backgroundColor: 'white',
                             flexWrap: 'wrap',
-                            minHeight: ScreenHeight,
-                            height: ScreenHeight,
+                            //minHeight: ScreenHeight,
                             justifyContent: 'center'}}>
 
 
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
+                   <ChatThumbnail />
                    <ChatThumbnail />
                    <ChatThumbnail />
                    <ChatThumbnail />

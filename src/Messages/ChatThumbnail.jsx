@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         height: 70,
         width: '97%',
         alignItems: 'center',
-        borderBottomWidth: 1,
+        borderBottomWidth: 0.5,
         borderColor: 'gray'
     },
     Profile:{
