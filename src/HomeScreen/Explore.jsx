@@ -6,7 +6,7 @@ import TopNavBar from "./TopNavBar";
 export default function Explore({navigation}){
 
     return(
-        <View >
+        <View style = {styles.Main}>
              <TopNavBar navigation = {navigation}/>
         
         </View>
