@@ -6,7 +6,12 @@ import logo from '../assets/bc.jpeg';
 import add from '../assets/add.png';
 
 
-export default function TopNavBar(){
+export default function TopNavBar(props){
+
+    const profileOnClick = ()=>{
+        props.navigation.navigate('Profile');
+    }
+
     return(
         <View style = {styles.Main}>
             <View style = {styles.Container}>
@@ -15,7 +20,7 @@ export default function TopNavBar(){
                     <TouchableOpacity>
                         <Image source={add}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style = {styles.Account}>
+                    <TouchableOpacity style = {styles.Account} onPress = {profileOnClick}>
                         <Text style = {styles.Initial}>B</Text>
                     </TouchableOpacity>
                 </View>
@@ -73,6 +78,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         marginRight: 11,
+        marginTop: 8
     }
 });
 

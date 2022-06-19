@@ -5,11 +5,11 @@ import TopNavBar from "./TopNavBar";
 
 
 
-export default function Home(){
+export default function Home({navigation}){
 
     return(
         <View style = {styles.Main}>
-            <TopNavBar />
+            <TopNavBar navigation = {navigation}/>
             <Text>Home</Text>
             
            
