@@ -2,6 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { ScrollView } from 'react-native';
 import { TouchableOpacity } from "react-native";
+import MenuItems from './MenuItems';
+import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons'; 
 
 export default function Menu({navigation}){
 
@@ -11,6 +17,14 @@ export default function Menu({navigation}){
     const profileOnClick = ()=>{
         navigation.navigate('Profile');
     }
+
+    const Group = <FontAwesome name="group" size={34} color="black" />
+    const PopBubble = <FontAwesome name="heartbeat" size={34} color="red" />
+    const Course = <FontAwesome5 name="book-reader" size={34} color="black" />
+    const Bursary = <Foundation name="page-search" size={34} color="black" />
+    const About = <Entypo name="info-with-circle" size={34} color="white" />
+    const Settings = <Feather name="settings" size={34} color="black" />
+    const Logout = <Entypo name="log-out" size={34} color="black" />
 
     return(
         <View style = {styles.Main}>
@@ -26,11 +40,16 @@ export default function Menu({navigation}){
 
             <ScrollView>
             <View style = {styles.List}>
-                <Text>List</Text>
+               <MenuItems title = 'Groups' icon = {Group}/>
+               <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>
+               <MenuItems title = 'Courses' icon = {Course}/>
+               <MenuItems title = 'Bursaries' icon = {Bursary}/>
+               <MenuItems title = 'About' icon = {About}/>
+               <MenuItems title = 'Settings' icon = {Settings}/>
+               <MenuItems title = 'Log Out' icon = {Logout}/>
+               
             </View>
             </ScrollView>
-            
-        
         </View>
     );
 }
@@ -88,7 +107,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: 'white',
         flexWrap: 'wrap',
-        minHeight: '100%'
+        minHeight: '100%',
+        justifyContent: 'center'
     }
 });
 
