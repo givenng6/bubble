@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {View, Text, StyleSheet} from 'react-native';
-
+import {View, Text, StyleSheet, Image} from 'react-native';
+import logo from '../assets/bc.jpeg';
 
 export default function SplashScreen({navigation}){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +19,7 @@ export default function SplashScreen({navigation}){
 
     return(
         <View style = {styles.Main}>
-            <Text style = {styles.Name}>Bubble</Text>
+            <Image style = {styles.Logo} source = {logo}/>
             {splash()}
         </View>
     );
@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
         fontSize: 55,
         fontWeight: 'bold',
         color: 'gray'
+    },
+    Logo:{
+        width: 350,
+        height: 100
     }
 });
 

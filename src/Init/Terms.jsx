@@ -11,9 +11,6 @@ export default function Terms({navigation}){
 
     return(
         <View style = {styles.Home}>
-            <View style = {styles.Heading}>
-                <Text style = {styles.TextStyle}>Bubble</Text>
-            </View>
             <View style = {styles.Body}>
                 <ScrollView>
                 <Text style= {styles.Title}>Our Terms of Use</Text>
@@ -47,22 +44,14 @@ const styles = StyleSheet.create({
     Home: {
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         justifyContent: 'center',
-        flex: 1
-    },
-    Heading: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundColor: 'white',
-        marginTop: 40,
-        flex: 0.5
+        flex: 1,
+        marginTop: 50
     },
     Body:{
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'white',
         padding: 12,
         flex: 5
     },
@@ -86,10 +75,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flex: 0.5,
         alignContent: 'center',
-        backgroundColor: 'white',
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10
-        //flexDirection: 'row-reverse',
     }
 });
