@@ -56,7 +56,7 @@ export default function Menu({navigation}){
                <MenuItems title = 'About' icon = {About}/>
                <MenuItems title = 'Settings' icon = {Settings}/>
                <MenuItems title = 'Log Out' icon = {Logout}/>
-               
+
             </View>
             </ScrollView>
         </View>
