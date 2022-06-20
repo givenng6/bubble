@@ -49,7 +49,7 @@ export default function Menu({navigation}){
                             minHeight: ScreenHeight,
                             height: ScreenHeight,
                             justifyContent: 'center'}}>
-               <MenuItems title = 'Groups' icon = {Group}/>
+               <MenuItems title = 'Communities' icon = {Group}/>
                <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>
                <MenuItems title = 'Courses' icon = {Course}/>
                <MenuItems title = 'Bursaries' icon = {Bursary}/>
