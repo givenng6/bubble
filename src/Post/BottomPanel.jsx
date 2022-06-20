@@ -6,10 +6,11 @@ import { Feather } from '@expo/vector-icons';
 
 export default function BottomPanel(){
 
+    const iconSize = 24;
     const [isReacted, setIsReacted] = useState(false);
     const [reactIconName, setReactIconName] = useState('hearto');
     const [reactIconColor, setReactIconColor] = useState('gray');
-    const [numReaction, setNumReaction] = useState(0);
+    const [numReaction, setNumReaction] = useState(99);
 
     const onReact = ()=>{
         if(isReacted){
@@ -28,18 +29,18 @@ export default function BottomPanel(){
         <View style = {styles.Main}>
             <TouchableOpacity>
                 <TouchableOpacity style = {styles.Items} onPress={onReact}>
-                <AntDesign name={reactIconName} size={27} color={reactIconColor} />
+                <AntDesign name={reactIconName} size={iconSize} color={reactIconColor} />
                 </TouchableOpacity>
                 <TouchableOpacity style = {styles.Items}>
                 <Text style = {styles.Like}>{numReaction < 100 ? numReaction : '99+'}</Text>
                 </TouchableOpacity>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Items}>
-                <MaterialCommunityIcons name="comment-text-multiple-outline" size={27} color="gray" />
+                <MaterialCommunityIcons name="comment-text-multiple-outline" size={iconSize} color="gray" />
                 <Text style = {styles.Words}>Contribute</Text>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Items}>
-                <Feather name="more-horizontal" size={27} color="gray" />
+                <Feather name="more-horizontal" size={iconSize} color="gray" />
                 <Text style = {styles.Words}>More</Text>
             </TouchableOpacity>
            
@@ -53,8 +54,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderTopWidth: 1,
+        //borderBottomWidth: 1,
+        //borderTopWidth: 1,
         padding: 2,
         borderColor: 'gray'
     },
@@ -65,12 +66,12 @@ const styles = StyleSheet.create({
     },
     Words:{
         fontWeight: '500',
-        fontSize: 17,
+        fontSize: 13,
         color: 'gray'
     },
     Like:{
         fontWeight: 'bold',
-        fontSize: 17,
+        fontSize: 13,
         color: '#0FBFBF'
     }
 });

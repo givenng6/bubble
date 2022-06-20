@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         //backgroundColor: 'blue',
-        height: 70,
+        height: 50,
         width: '97%',
         alignItems: 'center',
-        borderBottomWidth: 0.5,
+        //borderBottomWidth: 0.5,
         borderColor: 'gray'
     },
     Profile:{
@@ -33,16 +33,18 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#51E5C1',
-        width: 50,
-        height: 50,
-        borderRadius: 30,
-        marginLeft: 11,
+        //backgroundColor: '#51E5C1',
+        width: 40,
+        height: 40,
+        borderRadius: 100,
+        marginLeft: 5,
+        borderColor: 'gray',
+        borderWidth: 1,
         //borderColor: '#51E5C1'
     },
     Initial:{
-        fontSize: 30,
-        color: 'white',
+        fontSize: 20,
+        color: 'gray',
         fontWeight: 'bold'
     },
     Details:{
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     },
     Name:{
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 15,
         color: 'gray',
         marginLeft: 12
     },
