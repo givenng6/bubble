@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -6,16 +6,32 @@ import { Feather } from '@expo/vector-icons';
 
 export default function BottomPanel(){
 
-    // <AntDesign name="hearto" size={24} color="black" />
+    const [isReacted, setIsReacted] = useState(false);
+    const [reactIconName, setReactIconName] = useState('hearto');
+    const [reactIconColor, setReactIconColor] = useState('gray');
+    const [numReaction, setNumReaction] = useState(0);
+
+    const onReact = ()=>{
+        if(isReacted){
+            setReactIconColor('gray');
+            setReactIconName('hearto');
+            setNumReaction(numReaction - 1);
+        }else{
+            setReactIconColor('tomato');
+            setReactIconName('heart');
+            setNumReaction(numReaction + 1);
+        }
+        setIsReacted(!isReacted);
+    }
 
     return(
         <View style = {styles.Main}>
             <TouchableOpacity>
-                <TouchableOpacity>
-                <AntDesign name="hearto" size={27} color="gray" />
+                <TouchableOpacity style = {styles.Items} onPress={onReact}>
+                <AntDesign name={reactIconName} size={27} color={reactIconColor} />
                 </TouchableOpacity>
-                <TouchableOpacity>
-                <Text style = {styles.Like}>99+</Text>
+                <TouchableOpacity style = {styles.Items}>
+                <Text style = {styles.Like}>{numReaction < 100 ? numReaction : '99+'}</Text>
                 </TouchableOpacity>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Items}>
