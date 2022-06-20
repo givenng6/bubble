@@ -15,7 +15,7 @@ export default function Explore({navigation}){
             <ScrollView>
                 <View style = {styles.Scroller}>
                 <Stories />
-                <Post />
+                
                 </View>
             </ScrollView>
             
