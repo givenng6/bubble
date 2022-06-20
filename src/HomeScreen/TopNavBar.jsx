@@ -7,7 +7,7 @@ import logo from '../assets/bc.jpeg';
 
 export default function TopNavBar(props){
 
-    let name = 'A';
+    let name = 'G';
     const profileOnClick = ()=>{
         props.navigation.navigate('Profile');
     }
@@ -18,10 +18,10 @@ export default function TopNavBar(props){
                 <Image style = {styles.Logo} source = {logo}/>
                 <View style = {styles.Items}>
                     <TouchableOpacity>
-                    <Entypo name="plus" size={40} color="#0b0f17" />
+                    <Entypo name="plus" size={30} color="gray" />
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.Space}>
-                    <Ionicons name="ios-search" size={37} color="#0b0f17" />
+                    <Ionicons name="ios-search" size={30} color="gray" />
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.Account} onPress = {profileOnClick}>
                         <Text style = {styles.Initial}>{name}</Text>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     Main:{
         display: 'flex',
         flexDirection: 'row',
-        marginTop: 40,
+        marginTop: 35,
         backgroundColor:'white',
         padding: 4
     },
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
+        alignItems: 'center',
         marginRight: 11,
         marginTop: 8
     },
