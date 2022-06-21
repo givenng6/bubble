@@ -1,37 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import Button from "./Button";
 
 
-export default function UserProfile(){
+
+export default function UserProfile(props){
+    const [isUser, setIsUser] = useState(false);
+    const [iconLeft, setIconLeft] = useState('camera');
+    const [iconRight, setIconRight] = useState('settings');
+
+    const navigation = props.navigation;
+
     return(
         <View style = {styles.Main}>
             <View style = {styles.User}>
             <TouchableOpacity style = {styles.Profile}>
             <FontAwesome name="user" size={150} color="white" />
             </TouchableOpacity>
-
             
             </View>
             <View style = {styles.ListOpt}>
 
             <TouchableOpacity style = {styles.Options}>
-            <Entypo name="camera" size={24} color="white" />
+                {isUser &&
+                    <Entypo name={iconLeft} size={24} color="white" />
+                }
+                {!isUser &&
+                     <Feather name="user-plus" size={24} color="white" />
+                }
+            
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Options}>
-            <Ionicons name="settings" size={24} color="white" />
+            {isUser &&
+                 <Ionicons name={iconRight} size={24} color="white" />
+            }
+           
+            {!isUser &&
+                <Entypo name="chat" size={24} color="white" />
+            }
             </TouchableOpacity>
 
             </View>
             <Text style = {styles.Username}>Given Mathebula</Text>
             <Text>Some bio</Text>
+    
             <View style = {styles.ListOpt}>
-            <Button title = 'Connections'/>
-            <Button title = 'Connect'/>
-            <Button title = 'Catalogue'/>
+        
+            <Button title = 'Catalogue' navigation = {navigation}/>
+            <Button title = 'Connections' navigation = {navigation}/>
+
+            {!isUser &&
+                 <Button title = 'Options'/>
+            }
+           
             </View>
             
         </View>
@@ -45,11 +70,11 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         padding: 11,
         alignItems: 'center',
-        //borderBottomWidth: 1,
-        borderBottomColor: '#0FBFBF',
+        borderBottomWidth: 1,
+        borderBottomColor: 'gray',
         width: '97%',
         alignSelf: 'center',
-        backgroundColor: 'white'
+        //backgroundColor: 'white'
         //backgroundColor: 'white'
         
     },
@@ -77,7 +102,8 @@ const styles = StyleSheet.create({
     ListOpt:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexWrap: 'wrap'
     },
     User:{
         display: 'flex',

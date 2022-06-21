@@ -3,8 +3,19 @@ import {View, TouchableOpacity, StyleSheet, Text} from 'react-native';
 
 
 export default function Button(props){
+
+    const onClick = ()=>{
+        if(props.title === 'Catalogue'){
+            props.navigation.navigate('Catalogue');
+        }else if(props.title === 'Connections'){
+            props.navigation.navigate('Connections');
+        }else if(props.title === 'Options'){
+           // Options do something...
+        }
+    }
+
     return(
-        <TouchableOpacity style = {style.Main}>
+        <TouchableOpacity style = {style.Main} onPress = {onClick}>
             <Text style = {style.Title}>{props.title}</Text>
         </TouchableOpacity>
     );
@@ -17,8 +28,8 @@ const style = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#0FBFBF',
         padding: 7,
-        borderRadius: 9,
-        margin:11,
+        borderRadius: 25,
+        margin:7,
         //justifyContent: 'flex-start'
     },
     Title:{

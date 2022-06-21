@@ -4,12 +4,12 @@ import { Button } from 'react-native';
 import UserProfile from "./UserProfile";
 import Post from '../Post/Post';
 
-export default function Profile(){
+export default function Profile({navigation}){
 
     return(
         <ScrollView>
         <View style = {styles.Mian}>
-            <UserProfile/>
+            <UserProfile navigation = {navigation}/>
             <Post/>
             <Post/>
             <Post/>
