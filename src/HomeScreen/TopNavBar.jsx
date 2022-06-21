@@ -60,14 +60,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#0FBFBF',
-        width: 45,
-        height: 45,
-        borderRadius: 30,
+        width: 40,
+        height: 40,
+        borderRadius: 100,
         marginLeft: 11,
         //borderColor: '#51E5C1'
     },
     Initial:{
-        fontSize: 30,
+        fontSize: 25,
         color: 'white',
         fontWeight: 'bold'
     },

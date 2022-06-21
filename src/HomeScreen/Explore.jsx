@@ -17,6 +17,12 @@ export default function Explore({navigation}){
                 <Stories />
                 <Post/>
                 <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
                 </View>
             </ScrollView>
             
