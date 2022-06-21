@@ -18,6 +18,7 @@ export default function Stories(){
                 <StoryView title = 'NG'/>
                 <StoryView title = 'Girlfriend'/>
                 <StoryView title = 'Wits'/>
+                <StoryView title = 'Brian'/>
                 
             </View>
             </ScrollView>

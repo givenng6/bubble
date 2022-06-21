@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity} from "react-nativ
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
 
 export default function BottomPanel(){
 
-    const iconSize = 24;
+    const iconSize = 20;
     const [isReacted, setIsReacted] = useState(false);
     const [reactIconName, setReactIconName] = useState('hearto');
     const [reactIconColor, setReactIconColor] = useState('gray');
@@ -38,6 +39,10 @@ export default function BottomPanel(){
             <TouchableOpacity style = {styles.Items}>
                 <MaterialCommunityIcons name="comment-text-multiple-outline" size={iconSize} color="gray" />
                 <Text style = {styles.Words}>Contribute</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.Items}>
+                <Octicons name="share" size={iconSize} color="gray" />
+                <Text style = {styles.Words}>Distribute</Text>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Items}>
                 <Feather name="more-horizontal" size={iconSize} color="gray" />

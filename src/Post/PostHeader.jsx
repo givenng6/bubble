@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 100,
         marginLeft: 5,
-        borderColor: 'gray',
+        borderColor: 'black',
         borderWidth: 1,
         //borderColor: '#51E5C1'
     },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     Name:{
         fontWeight: 'bold',
         fontSize: 15,
-        color: 'gray',
+        color: 'black',
         marginLeft: 12
     },
     Time:{

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from "react-native";
+import Post from "./Post";
 
 
 export default function ContentView(){
@@ -24,13 +25,11 @@ export default function ContentView(){
             <View style = {styles.Tab}>
                 <TouchableWithoutFeedback onPress={onChangeTab}>
                     <View>
-
                     <Text style = {{fontWeight: '700',
                                         fontSize: 18,
                                         color: postColor,
                                         padding: 11}}>Posts</Text>
                     </View>
-                   
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback onPress={onChangeTab}>
                     <View>
@@ -42,6 +41,12 @@ export default function ContentView(){
                         
                 </TouchableWithoutFeedback>
             </View>
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
         </View>
     );
 }

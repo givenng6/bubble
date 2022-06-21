@@ -6,7 +6,7 @@ import PlainText from "./PlainText";
 export default function PostBody(){
     const text = 'Hello Bubble Welcome dvdgrgrgrg rgegeg vefgegeg egfeg';
     return(
-       <PlainText text = {text}/>
+        <View></View>
     );
 }
 
