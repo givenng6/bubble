@@ -31,10 +31,9 @@ export default function BottomPanel(){
             <TouchableOpacity>
                 <TouchableOpacity style = {styles.Items} onPress={onReact}>
                 <AntDesign name={reactIconName} size={iconSize} color={reactIconColor} />
-                </TouchableOpacity>
-                <TouchableOpacity style = {styles.Items}>
                 <Text style = {styles.Like}>{numReaction < 100 ? numReaction : '99+'}</Text>
                 </TouchableOpacity>
+                
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Items}>
                 <MaterialCommunityIcons name="comment-text-multiple-outline" size={iconSize} color="gray" />

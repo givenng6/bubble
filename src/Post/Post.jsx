@@ -5,11 +5,11 @@ import PostBody from "./PostBody";
 import PostHeader from "./PostHeader";
 
 
-export default function Post(){
+export default function Post(props){
     return(
         <View style = {styles.Main}>
             <PostHeader/>
-            <PostBody />
+            <PostBody type = {props.type}/>
             <BottomPanel />
         </View>
     );

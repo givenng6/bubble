@@ -15,14 +15,9 @@ export default function Explore({navigation}){
             <ScrollView>
                 <View style = {styles.Scroller}>
                 <Stories />
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post type = 'plain_text' />
+                <Post type = 'style_text'/>
+                
                 </View>
             </ScrollView>
             
