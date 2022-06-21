@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         padding: 11,
         alignItems: 'center',
-        borderBottomWidth: 1,
+        //borderBottomWidth: 1,
         borderBottomColor: 'gray',
         width: '97%',
         alignSelf: 'center',

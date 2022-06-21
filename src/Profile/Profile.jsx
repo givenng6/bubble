@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { Button } from 'react-native';
 import UserProfile from "./UserProfile";
 import Post from '../Post/Post';
+import ContentView from "../Post/ContentView";
 
 export default function Profile({navigation}){
 
@@ -10,7 +11,7 @@ export default function Profile({navigation}){
         <ScrollView>
         <View style = {styles.Mian}>
             <UserProfile navigation = {navigation}/>
-            
+            <ContentView />
         </View>
         </ScrollView>
     );
