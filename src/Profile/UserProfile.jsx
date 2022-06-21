@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import Button from "./Button";
 
 
 export default function UserProfile(){
@@ -27,6 +28,12 @@ export default function UserProfile(){
             </View>
             <Text style = {styles.Username}>Given Mathebula</Text>
             <Text>Some bio</Text>
+            <View style = {styles.ListOpt}>
+            <Button title = 'Connections'/>
+            <Button title = 'Connect'/>
+            <Button title = 'Catalogue'/>
+            </View>
+            
         </View>
     );
 }
@@ -38,7 +45,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         padding: 11,
         alignItems: 'center',
-        backgroundColor: '#0FBFBF'
+        //borderBottomWidth: 1,
+        borderBottomColor: '#0FBFBF',
+        width: '97%',
+        alignSelf: 'center',
+        backgroundColor: 'white'
+        //backgroundColor: 'white'
         
     },
     Profile:{
