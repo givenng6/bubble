@@ -24,7 +24,7 @@ export default function App() {
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Profile" component={Profile}
-          options = {{headerTitle: '', headerBackTitle: ''}}/>
+          options = {{headerTitle: '', headerBackTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="Home" component={Home} 
           options = {{header:()=> null}}/>
       </Stack.Navigator>

@@ -8,10 +8,13 @@ import { FontAwesome } from '@expo/vector-icons';
 export default function UserProfile(){
     return(
         <View style = {styles.Main}>
+            <View style = {styles.User}>
             <TouchableOpacity style = {styles.Profile}>
             <FontAwesome name="user" size={150} color="white" />
             </TouchableOpacity>
 
+            
+            </View>
             <View style = {styles.ListOpt}>
 
             <TouchableOpacity style = {styles.Options}>
@@ -22,7 +25,8 @@ export default function UserProfile(){
             </TouchableOpacity>
 
             </View>
-            
+            <Text style = {styles.Username}>Given Mathebula</Text>
+            <Text>Some bio</Text>
         </View>
     );
 }
@@ -31,10 +35,11 @@ export default function UserProfile(){
 const styles = StyleSheet.create({
     Main:{
         display: 'flex',
-        flexDirection: 'row',
-        margin: 11,
-        alignSelf: 'center'
-        //justifyContent: 'center'
+        flexDirection: 'column',
+        padding: 11,
+        alignItems: 'center',
+        backgroundColor: '#0FBFBF'
+        
     },
     Profile:{
         display: 'flex',
@@ -59,8 +64,18 @@ const styles = StyleSheet.create({
     },
     ListOpt:{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center'
+    },
+    User:{
+        display: 'flex',
+        flexDirection: 'row',
+        margin: 11,
+        alignSelf: 'center'
+    },
+    Username:{
+        fontWeight: 'bold',
+        fontSize: 22
     }
 
 });
