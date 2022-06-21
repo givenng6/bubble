@@ -52,7 +52,7 @@ export default function Home({navigation}){
 const styles = StyleSheet.create({
     Main:{
         display: 'flex',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         flex: 1
     },
 

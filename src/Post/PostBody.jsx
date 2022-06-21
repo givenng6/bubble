@@ -4,12 +4,22 @@ import PlainText from "./PlainText";
 
 
 export default function PostBody(){
-    const text = 'Hello Bubble Welcome dvdgrgrgrg rgegeg vefgegeg egfeg';
+    const text = 'Welcome to Bubble, the only platform that is build for university students by a university student😇.';
     return(
-        <View></View>
+        <View style = {styles.Main}>
+            <PlainText text = {text}/>
+        </View>
+       
     );
 }
 
+const styles = StyleSheet.create({
+    Main:{
+        display: 'flex',
+        flexDirection: 'column',
+        marginVertical: 12
+    }
+});
 
 
 

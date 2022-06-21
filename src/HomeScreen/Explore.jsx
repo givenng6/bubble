@@ -34,13 +34,13 @@ export default function Explore({navigation}){
 const styles = StyleSheet.create({
     Main:{
         display: 'flex',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         flex: 1
     },
     Scroller:{
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         alignItems: 'center'
     }
 
