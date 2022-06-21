@@ -10,7 +10,6 @@ import Home from './src/HomeScreen/Home';
 import Catalogue from './src/Catalogue/Catalogue';
 import Connections from './src/Connections/Connections';
 import SplashScreen from './src/Init/SplashScreen';
-import { HeaderTitle } from 'react-navigation-stack';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,8 +24,10 @@ export default function App() {
         <Stack.Screen name="UniPicker" component={UniPicker} 
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Catalogue" component={Catalogue}/>
-        <Stack.Screen name="Connections" component={Connections}/>
+        <Stack.Screen name="Catalogue" component={Catalogue}
+          options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>
+        <Stack.Screen name="Connections" component={Connections}
+           options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>
         <Stack.Screen name="Profile" component={Profile}
           options = {{headerTitle: '', headerBackTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="Home" component={Home} 
@@ -36,12 +37,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  
-  },
-});
+

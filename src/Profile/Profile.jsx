@@ -10,12 +10,7 @@ export default function Profile({navigation}){
         <ScrollView>
         <View style = {styles.Mian}>
             <UserProfile navigation = {navigation}/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            
         </View>
         </ScrollView>
     );
