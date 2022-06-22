@@ -10,6 +10,7 @@ import Home from './src/HomeScreen/Home';
 import Catalogue from './src/Catalogue/Catalogue';
 import Connections from './src/Connections/Connections';
 import SplashScreen from './src/Init/SplashScreen';
+import Search from './src/Search/Search';
 import CreatePost from './src/Post/CreatePost';
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +36,8 @@ export default function App() {
           options = {{headerTitle: '', headerBackTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="Home" component={Home} 
           options = {{header:()=> null}}/>
+          <Stack.Screen name="Search" component={Search}
+        options = {{headerBackTitle: '', headerTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

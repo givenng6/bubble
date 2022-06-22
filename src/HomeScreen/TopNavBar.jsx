@@ -20,6 +20,10 @@ export default function TopNavBar(props){
         props.navigation.navigate('CreatePost');
     }
 
+    const onSearch = ()=>{
+        props.navigation.navigate('Search');
+    }
+
     return(
         <View style = {styles.Main}>
             <View style = {styles.Container}>
@@ -28,7 +32,7 @@ export default function TopNavBar(props){
                     <TouchableOpacity onPress={onCreatePost}>
                     <Entypo name="plus" size={30} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style = {styles.Space}>
+                    <TouchableOpacity style = {styles.Space} onPress = {onSearch}>
                     <Ionicons name="ios-search" size={30} color="black" />
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.Account} onPress = {profileOnClick}>
