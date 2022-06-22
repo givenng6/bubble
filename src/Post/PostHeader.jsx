@@ -4,16 +4,20 @@ import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 
 export default function PostHeader(props){
 
+    const profileOnView = ()=>{
+        props.navigation.navigate('Profile', {user: props.user, isUser: false});
+    }
+
     return(
-        <TouchableOpacity style = {styles.Main}>
-             <TouchableOpacity style = {styles.Profile}>
+        <View style = {styles.Main}>
+             <TouchableOpacity style = {styles.Profile} onPress = {profileOnView}>
                     <Text style = {styles.Initial}>{props.user.username[0]}</Text>
             </TouchableOpacity>
             <View style = {styles.Details}>
                 <Text style = {styles.Name}>{props.user.username}</Text>
                 <Text style = {styles.Time}>16:00 - 20/06/2020</Text>
             </View>
-        </TouchableOpacity>
+        </View>
     );
 }
 

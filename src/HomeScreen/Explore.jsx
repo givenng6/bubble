@@ -29,7 +29,7 @@ export default function Explore({navigation}){
                 {feed.map((item, index)=>
                 // Iterating through the list of feeds...
                 // passing each data to the Post component for futher extraction
-                <Post key = {index} post = {item}/>
+                <Post key = {index} post = {item} navigation = {navigation}/>
                 )}
                 </View>
             </ScrollView>
