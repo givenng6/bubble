@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import {Text, View, StyleSheet, TouchableOpacity, ScrollView, Pressable} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 
 export default function CreatePost(){
 
-    const [colour, setColour] = useState('');
+    const [colour, setColour] = useState('white');
+    const [textColour, setTextColour] = useState('black');
 
-    const onChange = ()=>{
-        setColour('#6897bb');
+    const onClear = ()=>{
+        setColour('white');
+        setTextColour('black');
     }
    
     return(
@@ -18,7 +20,7 @@ export default function CreatePost(){
                 <TouchableOpacity style = {styles.Container}>
                 <AntDesign name="picture" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
-                <TouchableOpacity style = {styles.Container}>
+                <TouchableOpacity style = {styles.Container} onPress={onClear}>
                 <MaterialIcons name="layers-clear" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
 
@@ -26,29 +28,29 @@ export default function CreatePost(){
                 <View style = {styles.CompoHolder}>
 
                
-                <StyleComponent colour = '#ff80ed' setColour = {setColour}/>
+                <StyleComponent colour = '#ff80ed' setColour = {setColour} setTextColour = {setTextColour}/>
                 
-                <StyleComponent colour = '#ff7373' setColour = {setColour}/>
+                <StyleComponent colour = '#ff7373' setColour = {setColour} setTextColour = {setTextColour}/>
 
-                <StyleComponent colour = '#ff0000' setColour = {setColour}/>
-                <StyleComponent colour = '#990000' setColour = {setColour}/>
+                <StyleComponent colour = '#ff0000' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#990000' setColour = {setColour} setTextColour = {setTextColour}/>
 
-                <StyleComponent colour = '#ffd700' setColour = {setColour}/>
-                <StyleComponent colour = '#daa520' setColour = {setColour}/>
+                <StyleComponent colour = '#ffd700' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#daa520' setColour = {setColour} setTextColour = {setTextColour}/>
 
-                <StyleComponent colour = '#0000ff' setColour = {setColour}/>
-                <StyleComponent colour = '#088da5' setColour = {setColour}/>
-                <StyleComponent colour = '#6897bb' setColour = {setColour}/>
-                <StyleComponent colour = '#00ffff' setColour = {setColour}/>
+                <StyleComponent colour = '#0000ff' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#088da5' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#6897bb' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#00ffff' setColour = {setColour} setTextColour = {setTextColour}/>
 
-                <StyleComponent colour = '#065535' setColour = {setColour}/>
-                <StyleComponent colour = '#008000' setColour = {setColour}/>
-                <StyleComponent colour = '#00ff7f' setColour = {setColour}/>
-                <StyleComponent colour = '#d3ffce' setColour = {setColour}/>
+                <StyleComponent colour = '#065535' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#008000' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#00ff7f' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#d3ffce' setColour = {setColour} setTextColour = {setTextColour}/>
 
-                <StyleComponent colour = '#666666' setColour = {setColour}/>
-                <StyleComponent colour = '#333333' setColour = {setColour}/>
-                <StyleComponent colour = '#000000' setColour = {setColour}/>
+                <StyleComponent colour = '#666666' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#333333' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = '#000000' setColour = {setColour} setTextColour = {setTextColour}/>
                 </View>
                 </ScrollView>
                 
@@ -56,13 +58,18 @@ export default function CreatePost(){
             <View style = {{
                 display: 'flex',
                 flexDirection: 'column',
-                borderColor: 'black',
+                justifyContent: 'center',
+                borderColor: 'gray',
                 borderWidth: 1,
                 width: '100%',
                 height: 200,
                 backgroundColor: colour
             }}>
-                <Text>Canvas</Text>
+                <TextInput style = {{
+                    alignSelf: 'center',
+                    fontSize: 20,
+                    color: textColour
+                }} multiline placeholder = 'Share your thoughts...'/>
             </View>
         </View>
     );
@@ -94,20 +101,10 @@ const styles = StyleSheet.create({
         margin: 5
     },
     Canvas:{
-        display: 'flex',
-        flexDirection: 'column',
-        borderColor: 'black',
-        borderWidth: 1,
-        width: '100%',
-        height: 200
+        alignSelf: 'center',
+        fontSize: 20,
+
     },
-    Click:{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor:'green',
-        alignSelf: 'center'
-    }
+    
     
 });

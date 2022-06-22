@@ -7,6 +7,7 @@ export default function StyleComponent(props){
 
    const colourChange = ()=>{
         props.setColour(colour);
+        props.setTextColour('white');
    }
 
     return(
