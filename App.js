@@ -10,6 +10,7 @@ import Home from './src/HomeScreen/Home';
 import Catalogue from './src/Catalogue/Catalogue';
 import Connections from './src/Connections/Connections';
 import SplashScreen from './src/Init/SplashScreen';
+import CreatePost from './src/Post/CreatePost';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,8 @@ export default function App() {
         <Stack.Screen name="UniPicker" component={UniPicker} 
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="CreatePost" component={CreatePost}
+        options = {{headerBackTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="Catalogue" component={Catalogue}
           options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>
         <Stack.Screen name="Connections" component={Connections}
