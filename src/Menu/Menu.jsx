@@ -20,6 +20,7 @@ export default function Menu({navigation}){
         navigation.navigate('Profile');
     }
 
+    // The icons for the menu items...
     const Group = <FontAwesome name="group" size={34} color="#0FBFBF" />
     const PopBubble = <FontAwesome name="heartbeat" size={34} color="tomato" />
     const Course = <FontAwesome5 name="book-reader" size={34} color="#0FBFBF" />
@@ -47,7 +48,6 @@ export default function Menu({navigation}){
                             backgroundColor: 'white',
                             flexWrap: 'wrap',
                             minHeight: ScreenHeight,
-                            height: ScreenHeight,
                             justifyContent: 'center'}}>
                <MenuItems title = 'Communities' icon = {Group}/>
                <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>

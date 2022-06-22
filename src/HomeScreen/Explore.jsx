@@ -6,6 +6,9 @@ import TopNavBar from "./TopNavBar";
 
 export default function Explore({navigation}){
 
+    // Data about the logged in user...
+    const currUser = {username: 'Given Mathebula', userID: 'givenng6@gmail.com'};
+
     // the collection of posts to show on the explore page...
     // must fetch from the database...
     const feed = [{type: 'plain_text', text:'Post that is plain', user:{userID: 'bubble@gmail.com', username:'Bubble App'}}, 
@@ -17,7 +20,7 @@ export default function Explore({navigation}){
     
     return(
         <View style = {styles.Main}>
-            <TopNavBar navigation = {navigation}/>
+            <TopNavBar navigation = {navigation} currUser = {currUser}/>
             <ScrollView>
                 <View style = {styles.Scroller}>
 

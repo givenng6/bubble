@@ -9,10 +9,11 @@ import Button from "./Button";
 
 
 export default function UserProfile(props){
-    const [isUser, setIsUser] = useState(false);
-    const [iconLeft, setIconLeft] = useState('camera');
-    const [iconRight, setIconRight] = useState('settings');
 
+    // State of the user
+    const user = props.user;
+    const isUser = props.isUser;
+    
     const navigation = props.navigation;
 
     return(
@@ -27,7 +28,7 @@ export default function UserProfile(props){
 
             <TouchableOpacity style = {styles.Options}>
                 {isUser &&
-                    <Entypo name={iconLeft} size={24} color="white" />
+                    <Entypo name={"camera"} size={24} color="white" />
                 }
                 {!isUser &&
                      <Feather name="user-plus" size={24} color="white" />
@@ -36,7 +37,7 @@ export default function UserProfile(props){
             </TouchableOpacity>
             <TouchableOpacity style = {styles.Options}>
             {isUser &&
-                 <Ionicons name={iconRight} size={24} color="white" />
+                 <Ionicons name={"settings"} size={24} color="white" />
             }
            
             {!isUser &&
@@ -45,7 +46,7 @@ export default function UserProfile(props){
             </TouchableOpacity>
 
             </View>
-            <Text style = {styles.Username}>Given Mathebula</Text>
+            <Text style = {styles.Username}>{user.username}</Text>
             <Text>Some bio</Text>
     
             <View style = {styles.ListOpt}>

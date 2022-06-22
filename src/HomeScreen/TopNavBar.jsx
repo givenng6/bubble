@@ -11,7 +11,7 @@ export default function TopNavBar(props){
     const profileOnClick = ()=>{
         // When click to view own profile... 
         
-        props.navigation.navigate('Profile');
+        props.navigation.navigate('Profile', {user: props.currUser, isUser: true});
     }
 
     const onCreatePost = ()=>{
