@@ -3,7 +3,7 @@ import { View, Text, TouchableWithoutFeedback, StyleSheet } from "react-native";
 import Post from "./Post";
 
 
-export default function ContentView(){
+export default function ContentView(props){
 
     const [isPost, setIsPost] = useState(true);
     const [postColor, setPostColor] = useState('#0FBFBF');
@@ -41,12 +41,7 @@ export default function ContentView(){
                         
                 </TouchableWithoutFeedback>
             </View>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            <Post post = {props.data}/>
         </View>
     );
 }

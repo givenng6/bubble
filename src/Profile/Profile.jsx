@@ -5,13 +5,15 @@ import UserProfile from "./UserProfile";
 import Post from '../Post/Post';
 import ContentView from "../Post/ContentView";
 
-export default function Profile({navigation}){
+export default function Profile({route, navigation}){
+    const {data} = route.params;
 
+    console.log(data);
     return(
         <ScrollView>
         <View style = {styles.Mian}>
             <UserProfile navigation = {navigation}/>
-            <ContentView />
+            <ContentView data = {data}/>
         </View>
         </ScrollView>
     );

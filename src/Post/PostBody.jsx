@@ -5,18 +5,17 @@ import StyleText from "./StyleText";
 
 
 export default function PostBody(props){
-    const text = 'Welcome to Bubble, the only platform that is build for university students by a university student😇.';
     const errorMsg = "Can't show this post, reason your application might be out of date. Please update to the latest version";
 
-    if(props.type === 'plain_text'){
+    if(props.post.type === "plain_text"){
         return(
-            <PlainText text = {text}/>
+            <PlainText text = {props.post.text}/>
         );
        
-    }else if(props.type === 'style_text'){
+    }else if(props.post.type === "style_text"){
         return(
             <View style = {styles.Main}>
-               <StyleText text = {text} theme = 'orange'/>
+               <StyleText text = {props.post.text} theme = {props.post.theme}/>
             </View>
            
         );

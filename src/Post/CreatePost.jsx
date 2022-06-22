@@ -2,22 +2,71 @@ import React, { useState } from "react";
 import {Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 
-export default function CreatePost(){
+export default function CreatePost({route, navigation}){
 
+    const {data} = route.params;
+
+    const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');
     const [textColour, setTextColour] = useState('black');
+
+    const onPost = ()=>{
+        if(value !== ''){
+            
+        
+
+            let type = 'plain_text';
+
+            if(colour !== 'white'){
+                type = 'style_text';
+            }
+
+            const post = {type: type, text: value, theme: colour};
+            data.push(post);
+
+            navigation.replace('Profile', {data: post});
+        }
+    }
 
     const onClear = ()=>{
         setColour('white');
         setTextColour('black');
     }
+
+    const changeText = (text) =>{
+        setValue(text);
+    }
    
     return(
         <View style = {styles.Main}>
+            <View style = {{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                borderColor: 'gray',
+                borderWidth: 1,
+                width: '100%',
+                height: 300,
+                backgroundColor: colour,
+                marginVertical: 20,
+                borderRadius: 9,
+                padding: 5
+            }}>
+                <TextInput style = {{
+                    alignSelf: 'center',
+                    fontSize: 20,
+                    color: textColour,
+                    padding: 5
+                }} multiline value={value} onChangeText = {changeText} placeholder  = 'Share your thoughts...'/>
+            </View>
+
             <View style = {styles.CompoHolder}>
-                <TouchableOpacity style = {styles.Container}>
+            <TouchableOpacity style = {styles.Container}>
                 <AntDesign name="picture" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
                 <TouchableOpacity style = {styles.Container} onPress={onClear}>
@@ -36,6 +85,7 @@ export default function CreatePost(){
                 <StyleComponent colour = '#990000' setColour = {setColour} setTextColour = {setTextColour}/>
 
                 <StyleComponent colour = '#ffd700' setColour = {setColour} setTextColour = {setTextColour}/>
+                <StyleComponent colour = 'orange' setColour = {setColour} setTextColour = {setTextColour}/>
                 <StyleComponent colour = '#daa520' setColour = {setColour} setTextColour = {setTextColour}/>
 
                 <StyleComponent colour = '#0000ff' setColour = {setColour} setTextColour = {setTextColour}/>
@@ -55,22 +105,11 @@ export default function CreatePost(){
                 </ScrollView>
                 
             </View>
-            <View style = {{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                borderColor: 'gray',
-                borderWidth: 1,
-                width: '100%',
-                height: 200,
-                backgroundColor: colour
-            }}>
-                <TextInput style = {{
-                    alignSelf: 'center',
-                    fontSize: 20,
-                    color: textColour
-                }} multiline placeholder = 'Share your thoughts...'/>
-            </View>
+
+            <TouchableOpacity style = {styles.FAB} onPress = {onPost}>
+            <Octicons name="upload" size={24} color="white" />
+            </TouchableOpacity>
+            
         </View>
     );
 }
@@ -105,6 +144,19 @@ const styles = StyleSheet.create({
         fontSize: 20,
 
     },
+    FAB:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 50,
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        height: 50,
+        backgroundColor: '#0FBFBF',
+        borderRadius: 100,
+    }
     
     
 });
+
+

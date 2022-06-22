@@ -9,7 +9,7 @@ export default function Post(props){
     return(
         <View style = {styles.Main}>
             <PostHeader/>
-            <PostBody type = {props.type}/>
+            <PostBody post = {props.post}/>
             <BottomPanel />
         </View>
     );

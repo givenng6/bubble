@@ -13,7 +13,7 @@ export default function TopNavBar(props){
     }
 
     const onCreatePost = ()=>{
-        props.navigation.navigate('CreatePost');
+        props.navigation.navigate('CreatePost', {data: props.data});
     }
 
     return(
