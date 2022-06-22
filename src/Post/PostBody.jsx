@@ -21,6 +21,7 @@ export default function PostBody(props){
         );
     }else{
         // If feature is only available on the latest update...
+        // Cannot resolve the current post type...
         return(
             <View>
                 <Text style = {styles.Error}>{errorMsg}</Text>

@@ -9,11 +9,15 @@ export default function TopNavBar(props){
 
     let name = 'G';
     const profileOnClick = ()=>{
+        // When click to view own profile... 
+        
         props.navigation.navigate('Profile');
     }
 
     const onCreatePost = ()=>{
-        props.navigation.navigate('CreatePost', {data: props.data});
+        // When click, create post... 
+        // Must send relevent data...
+        props.navigation.navigate('CreatePost');
     }
 
     return(

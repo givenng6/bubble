@@ -2,43 +2,55 @@ import React, { useState } from "react";
 import {Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 
-export default function CreatePost({route, navigation}){
-
-    const {data} = route.params;
+export default function CreatePost({navigation}){
 
     const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');
     const [textColour, setTextColour] = useState('black');
 
     const onPost = ()=>{
+
+        /*
+            * Clicking post button...
+            * Must only be clickable if the post content is not empty...
+        */
+
         if(value !== ''){
             
-        
-
             let type = 'plain_text';
 
             if(colour !== 'white'){
+                // The colour is changed, therefore it is a styled post...
                 type = 'style_text';
             }
 
-            const post = {type: type, text: value, theme: colour};
-            data.push(post);
+            /* 
+                * New post to be sent to the database...
+                * Must add the user details on the post
+            */
 
-            navigation.replace('Profile', {data: post});
+            const user = {userID: 'givenng6@gmail.com', username:'Given Mathebula'};
+            const newPost = {type: type, text: value, theme: colour, user: user};
+           
+            // return back to the Explore page...
+            navigation.replace('Home');
         }
     }
 
     const onClear = ()=>{
+        /*
+            * Removing the background colour...
+            * Result in a plain text 
+        */
         setColour('white');
         setTextColour('black');
     }
 
     const changeText = (text) =>{
+        // Handling the the changes made on the post text...
         setValue(text);
     }
    
@@ -76,7 +88,6 @@ export default function CreatePost({route, navigation}){
                 <ScrollView horizontal={true}>
                 <View style = {styles.CompoHolder}>
 
-               
                 <StyleComponent colour = '#ff80ed' setColour = {setColour} setTextColour = {setTextColour}/>
                 
                 <StyleComponent colour = '#ff7373' setColour = {setColour} setTextColour = {setTextColour}/>

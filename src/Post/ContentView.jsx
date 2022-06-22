@@ -41,7 +41,9 @@ export default function ContentView(props){
                         
                 </TouchableWithoutFeedback>
             </View>
-            <Post post = {props.data}/>
+            {
+                // Must display all the posts by the current user...
+            }
         </View>
     );
 }

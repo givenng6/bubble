@@ -8,7 +8,7 @@ import PostHeader from "./PostHeader";
 export default function Post(props){
     return(
         <View style = {styles.Main}>
-            <PostHeader/>
+            <PostHeader user = {props.post.user}/>
             <PostBody post = {props.post}/>
             <BottomPanel />
         </View>

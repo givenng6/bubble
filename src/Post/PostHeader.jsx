@@ -2,15 +2,15 @@ import React from "react";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 
 
-export default function PostHeader(){
+export default function PostHeader(props){
 
     return(
         <TouchableOpacity style = {styles.Main}>
              <TouchableOpacity style = {styles.Profile}>
-                    <Text style = {styles.Initial}>G</Text>
+                    <Text style = {styles.Initial}>{props.user.username[0]}</Text>
             </TouchableOpacity>
             <View style = {styles.Details}>
-                <Text style = {styles.Name}>Given Mathebula</Text>
+                <Text style = {styles.Name}>{props.user.username}</Text>
                 <Text style = {styles.Time}>16:00 - 20/06/2020</Text>
             </View>
         </TouchableOpacity>

@@ -1,19 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-import { Button } from 'react-native';
 import UserProfile from "./UserProfile";
-import Post from '../Post/Post';
 import ContentView from "../Post/ContentView";
 
-export default function Profile({route, navigation}){
-    const {data} = route.params;
-
-    console.log(data);
+export default function Profile({navigation}){
+   
     return(
         <ScrollView>
         <View style = {styles.Mian}>
             <UserProfile navigation = {navigation}/>
-            <ContentView data = {data}/>
+            <ContentView />
         </View>
         </ScrollView>
     );
