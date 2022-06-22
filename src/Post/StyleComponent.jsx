@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Pressable} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 export default function StyleComponent(props){
    const colour = props.colour;
 
+   const colourChange = ()=>{
+        props.setColour(colour);
+   }
+
     return(
-        <TouchableOpacity style = {{
+           <TouchableOpacity onPress={colourChange} style = {{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -18,7 +22,7 @@ export default function StyleComponent(props){
             margin: 5
             }}>
         </TouchableOpacity>
-           
+        
     );
 }
 

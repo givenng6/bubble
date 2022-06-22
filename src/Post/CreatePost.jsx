@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, ScrollView, Pressable} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
@@ -15,7 +15,7 @@ export default function CreatePost(){
     return(
         <View style = {styles.Main}>
             <View style = {styles.CompoHolder}>
-                <TouchableOpacity style = {styles.Container} onPress={onChange}>
+                <TouchableOpacity style = {styles.Container}>
                 <AntDesign name="picture" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
                 <TouchableOpacity style = {styles.Container}>
@@ -25,31 +25,30 @@ export default function CreatePost(){
                 <ScrollView horizontal={true}>
                 <View style = {styles.CompoHolder}>
 
-                <TouchableOpacity style = {styles.Container} onPress={onChange}>
-                <StyleComponent colour = '#ff80ed'/>
-                </TouchableOpacity>
+               
+                <StyleComponent colour = '#ff80ed' setColour = {setColour}/>
                 
-                <StyleComponent colour = '#ff7373'/>
+                <StyleComponent colour = '#ff7373' setColour = {setColour}/>
 
-                <StyleComponent colour = '#ff0000'/>
-                <StyleComponent colour = '#990000'/>
+                <StyleComponent colour = '#ff0000' setColour = {setColour}/>
+                <StyleComponent colour = '#990000' setColour = {setColour}/>
 
-                <StyleComponent colour = '#ffd700'/>
-                <StyleComponent colour = '#daa520'/>
+                <StyleComponent colour = '#ffd700' setColour = {setColour}/>
+                <StyleComponent colour = '#daa520' setColour = {setColour}/>
 
-                <StyleComponent colour = '#0000ff'/>
-                <StyleComponent colour = '#088da5'/>
-                <StyleComponent colour = '#6897bb'/>
-                <StyleComponent colour = '#00ffff'/>
+                <StyleComponent colour = '#0000ff' setColour = {setColour}/>
+                <StyleComponent colour = '#088da5' setColour = {setColour}/>
+                <StyleComponent colour = '#6897bb' setColour = {setColour}/>
+                <StyleComponent colour = '#00ffff' setColour = {setColour}/>
 
-                <StyleComponent colour = '#065535'/>
-                <StyleComponent colour = '#008000'/>
-                <StyleComponent colour = '#00ff7f'/>
-                <StyleComponent colour = '#d3ffce'/>
+                <StyleComponent colour = '#065535' setColour = {setColour}/>
+                <StyleComponent colour = '#008000' setColour = {setColour}/>
+                <StyleComponent colour = '#00ff7f' setColour = {setColour}/>
+                <StyleComponent colour = '#d3ffce' setColour = {setColour}/>
 
-                <StyleComponent colour = '#666666'/>
-                <StyleComponent colour = '#333333'/>
-                <StyleComponent colour = '#000000'/>
+                <StyleComponent colour = '#666666' setColour = {setColour}/>
+                <StyleComponent colour = '#333333' setColour = {setColour}/>
+                <StyleComponent colour = '#000000' setColour = {setColour}/>
                 </View>
                 </ScrollView>
                 
@@ -101,6 +100,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: '100%',
         height: 200
+    },
+    Click:{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor:'green',
+        alignSelf: 'center'
     }
     
 });
