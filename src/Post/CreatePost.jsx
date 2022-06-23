@@ -4,12 +4,14 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
+import StylePostColours from './StylePostColours.json';
 
 export default function CreatePost({navigation}){
 
     const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');
     const [textColour, setTextColour] = useState('black');
+    const coloursArray = StylePostColours.colours;
 
     const onPost = ()=>{
 
@@ -88,29 +90,6 @@ export default function CreatePost({navigation}){
                 <ScrollView horizontal={true}>
                 <View style = {styles.CompoHolder}>
 
-                <StyleComponent colour = '#ff80ed' setColour = {setColour} setTextColour = {setTextColour}/>
-                
-                <StyleComponent colour = '#ff7373' setColour = {setColour} setTextColour = {setTextColour}/>
-
-                <StyleComponent colour = '#ff0000' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#990000' setColour = {setColour} setTextColour = {setTextColour}/>
-
-                <StyleComponent colour = '#ffd700' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = 'orange' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#daa520' setColour = {setColour} setTextColour = {setTextColour}/>
-
-                <StyleComponent colour = '#0000ff' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#088da5' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#6897bb' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#00ffff' setColour = {setColour} setTextColour = {setTextColour}/>
-
-                <StyleComponent colour = '#065535' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#008000' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#00ff7f' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#d3ffce' setColour = {setColour} setTextColour = {setTextColour}/>
-
-                <StyleComponent colour = '#666666' setColour = {setColour} setTextColour = {setTextColour}/>
-                <StyleComponent colour = '#333333' setColour = {setColour} setTextColour = {setTextColour}/>
                 <StyleComponent colour = '#000000' setColour = {setColour} setTextColour = {setTextColour}/>
                 </View>
                 </ScrollView>
