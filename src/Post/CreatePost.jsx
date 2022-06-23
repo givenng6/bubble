@@ -89,8 +89,17 @@ export default function CreatePost({navigation}){
 
                 <ScrollView horizontal={true}>
                 <View style = {styles.CompoHolder}>
-
-                <StyleComponent colour = '#000000' setColour = {setColour} setTextColour = {setTextColour}/>
+                {
+                    // Adding the colour panel, with all the colours from the JSON file...
+                    coloursArray.map((currColour, index)=>
+                    <StyleComponent 
+                    key = {index}
+                    colour = {currColour} 
+                    setColour = {setColour} 
+                    setTextColour = {setTextColour}/>
+                    )
+                }
+                
                 </View>
                 </ScrollView>
                 
