@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 import StylePostColours from './StylePostColours.json';
 
@@ -104,10 +103,6 @@ export default function CreatePost({navigation}){
                 </ScrollView>
                 
             </View>
-
-            <TouchableOpacity style = {styles.FAB} onPress = {onPost}>
-            <Octicons name="upload" size={24} color="white" />
-            </TouchableOpacity>
             
         </View>
     );
@@ -142,19 +137,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 20,
 
-    },
-    FAB:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 50,
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        height: 50,
-        backgroundColor: '#0FBFBF',
-        borderRadius: 100,
     }
-    
     
 });
 

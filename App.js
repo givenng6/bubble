@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Terms from './src/Init/Terms';
@@ -12,6 +10,7 @@ import Connections from './src/Connections/Connections';
 import SplashScreen from './src/Init/SplashScreen';
 import Search from './src/Search/Search';
 import CreatePost from './src/Post/CreatePost';
+import PostButton from './src/Post/PostButton';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +26,10 @@ export default function App() {
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="CreatePost" component={CreatePost}
-        options = {{headerBackTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
+        options = {{headerBackTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'},
+        headerRight: ()=>(
+          <PostButton/>
+        )}}/>
         <Stack.Screen name="Catalogue" component={Catalogue}
           options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>
         <Stack.Screen name="Connections" component={Connections}
