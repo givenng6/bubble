@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
-import MoreModal from "./MoreModal";
+import MoreModal from "./Modal/MoreModal";
 
 export default function BottomPanel(){
 

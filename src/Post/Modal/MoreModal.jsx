@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, View,TouchableOpacity, StyleSheet, Modal, TouchableWithoutFeedback } from "react-native";
+import ModalClickables from "./ModalClickables";
 
 export default function MoreModal(props){
 
@@ -9,13 +10,12 @@ export default function MoreModal(props){
 
     return(
 
-       <Modal visible = {props.visible} transparent={true} animationType= 'slide'>
+       <Modal visible = {props.visible} transparent={true} animationType= 'slide' onRequestClose={onClose}>
             <View style = {styles.Main}>
                 <View style = {styles.Content}>
-                    <Text>Report</Text>
-                    <TouchableWithoutFeedback onPress={onClose}>
-                        <Text>Close</Text>
-                    </TouchableWithoutFeedback>
+                    <ModalClickables colour = 'black' title = 'View Profile' setVisible = {props.setVisible}/>
+                    <ModalClickables colour = 'tomato' title = 'Report' setVisible = {props.setVisible}/>
+                    <ModalClickables colour = 'black' title = 'Close' setVisible = {props.setVisible}/>
                 </View>
                 
             </View>
@@ -39,12 +39,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        bottom: 20,
-        height: 200,
+        padding: 25,
         backgroundColor: 'white',
         alignSelf: 'center',
-        width: '100%'
-    }
+        width: '100%',
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12
+    },
 });
 
 
