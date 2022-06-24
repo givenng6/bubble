@@ -33,9 +33,7 @@ const styles = StyleSheet.create({
     Main:{
         display: 'flex',
         flexDirection: 'row',
-        borderTopWidth: 0.5,
         width: '97%',
-        //width: '97%'
     },
     AddStory:{
         display: 'flex',

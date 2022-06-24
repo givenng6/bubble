@@ -14,6 +14,8 @@ export default function MoreModal(props){
             <View style = {styles.Main}>
                 <View style = {styles.Content}>
                     <ModalClickables colour = 'black' title = 'View Profile' setVisible = {props.setVisible}/>
+                    <ModalClickables colour = 'black' title = 'Option 1' setVisible = {props.setVisible}/>
+                    <ModalClickables colour = 'black' title = 'Option 2' setVisible = {props.setVisible}/>
                     <ModalClickables colour = 'tomato' title = 'Report' setVisible = {props.setVisible}/>
                     <ModalClickables colour = 'black' title = 'Close' setVisible = {props.setVisible}/>
                 </View>

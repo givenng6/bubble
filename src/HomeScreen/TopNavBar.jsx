@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         width: 139,
-        height: 45,
+        height: 35,
         marginLeft: 11,
         marginTop: 11,
     },
@@ -72,14 +72,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#0FBFBF',
-        width: 40,
-        height: 40,
+        width: 35,
+        height: 35,
         borderRadius: 100,
         marginLeft: 11,
         //borderColor: '#51E5C1'
     },
     Initial:{
-        fontSize: 25,
+        fontSize: 20,
         color: 'white',
         fontWeight: 'bold'
     },

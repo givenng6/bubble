@@ -11,7 +11,7 @@ export default function Explore({navigation}){
 
     // the collection of posts to show on the explore page...
     // must fetch from the database...
-    const feed = [{type: 'plain_text', text:'Post that is plain', user:{userID: 'bubble@gmail.com', username:'Bubble App'}}, 
+    const feed = [{type: 'plain_text', text:'Plain text', user:{userID: 'bubble@gmail.com', username:'Bubble App'}}, 
                 {type: 'style_text', text: 'Post with style, with orange background', theme: 'orange', user:{userID: 'bubble@gmail.com', username:'Bubble App'}},
                 {type: 'plain_text', text: "Social media are interactive digital channels that facilitate the creation and sharing of information, ideas, interests, and other forms of expression through virtual communities and networks.", theme: 'white', user:{userID: 'social@gmail.com', username:'Social Media'}},
                 {type: 'plain_text', text: "Google LLC is an American multinational technology company that focuses on artificial intelligence, search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.", theme: 'white', user:{userID: 'google@google.com', username:'Google'}},
