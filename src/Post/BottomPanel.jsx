@@ -4,6 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
+import MoreModal from "./MoreModal";
 
 export default function BottomPanel(){
 
@@ -12,6 +13,8 @@ export default function BottomPanel(){
     const [reactIconName, setReactIconName] = useState('hearto');
     const [reactIconColor, setReactIconColor] = useState('gray');
     const [numReaction, setNumReaction] = useState(99);
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     const onReact = ()=>{
         if(isReacted){
@@ -24,6 +27,11 @@ export default function BottomPanel(){
             setNumReaction(numReaction + 1);
         }
         setIsReacted(!isReacted);
+    }
+
+    const onMore = ()=>{
+        // showing the modal for more... 
+        setModalVisible(true);
     }
 
     return(
@@ -43,10 +51,14 @@ export default function BottomPanel(){
                 <Octicons name="share" size={iconSize} color="gray" />
                 <Text style = {styles.Words}>Distribute</Text>
             </TouchableOpacity>
-            <TouchableOpacity style = {styles.Items}>
+            <TouchableOpacity style = {styles.Items} onPress = {onMore}>
                 <Feather name="more-horizontal" size={iconSize} color="gray" />
                 <Text style = {styles.Words}>More</Text>
             </TouchableOpacity>
+
+
+
+            <MoreModal visible = {modalVisible} setVisible = {setModalVisible}/>
            
         </View>
     );
