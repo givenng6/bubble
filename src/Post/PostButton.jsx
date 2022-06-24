@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export default function PostButton({navigation}){
+export default function PostButton(props){
 
-    const [postData, setPostData] = useState({});
+   
 
     const onPost = ()=>{
-        
+        console.log(props.postData);
+
+        if(props.postData !== ''){
+            props.setIsPost(true);
+        }
+
+        console.log(props.isPost);
     }
 
     return(

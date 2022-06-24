@@ -11,10 +11,15 @@ import SplashScreen from './src/Init/SplashScreen';
 import Search from './src/Search/Search';
 import CreatePost from './src/Post/CreatePost';
 import PostButton from './src/Post/PostButton';
+import { useState } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  const [postData, setPostData] = useState('Init');
+  const [isPost, setIsPost] = useState(false);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,10 +30,13 @@ export default function App() {
         <Stack.Screen name="UniPicker" component={UniPicker} 
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="CreatePost" component={CreatePost}
+        <Stack.Screen name="CreatePost" component={CreatePost} initialParams={{'setPostData': setPostData, 'isPost': isPost}}
         options = {{headerBackTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'},
         headerRight: ()=>(
-          <PostButton/>
+          <PostButton setPostData = {setPostData} 
+                      postData = {postData}
+                      isPost = {isPost} 
+                      setIsPost = {setIsPost}/>
         )}}/>
         <Stack.Screen name="Catalogue" component={Catalogue}
           options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>

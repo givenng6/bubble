@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 import StylePostColours from './StylePostColours.json';
 
-export default function CreatePost({navigation}){
+export default function CreatePost(props, {navigation}){
 
     const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');
@@ -53,6 +53,7 @@ export default function CreatePost({navigation}){
     const changeText = (text) =>{
         // Handling the the changes made on the post text...
         setValue(text);
+        //props.route.params.setPostData(value);
     }
    
     return(
