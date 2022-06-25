@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import logo from '../assets/bc.jpeg';
 
 export default function SplashScreen({navigation}){
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     
     const splash = ()=>{
         // after loading enough data must skip... 

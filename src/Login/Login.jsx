@@ -1,12 +1,26 @@
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Button } from 'react-native';
+import { authentication } from "../../Firebase/Firebase-Config";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 
 export default function Login({navigation}){
 
     const onSignIn =()=>{
-        navigation.navigate('Home');
+        // Sign In With Google...
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(authentication, provider)
+        .then((userData)=>{
+            // on Sucesss...
+            // userData, contains data of the user....
+            console.log(userData);
+            navigation.navigate('Home');
+        })
+        .catch((error)=>{
+            // on Failure
+            console.log(error);
+        })
     }
 
     return(
