@@ -59,7 +59,6 @@ export default function CreatePost({navigation}){
                     setTextColour = {setTextColour}/>
                     )
                 }
-                
                 </View>
                 </ScrollView>
                 

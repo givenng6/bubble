@@ -46,9 +46,7 @@ export default function Menu({navigation}){
             <ScrollView>
             <View style = {{display: 'flex',
                             flexDirection: 'row',
-                            backgroundColor: 'white',
                             flexWrap: 'wrap',
-                            minHeight: ScreenHeight,
                             justifyContent: 'center'}}>
                <MenuItems title = 'Communities' icon = {Group}/>
                <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
         padding: 12,
         marginLeft: 12,
         fontSize: 44,
-        color: 'white'
+        color: 'white',
     }
 });
 
