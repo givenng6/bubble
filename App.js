@@ -18,9 +18,6 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const [postData, setPostData] = useState('Init');
-  const [isPost, setIsPost] = useState(false);
-
   return (
     <PostContextProvider>
     <NavigationContainer>

@@ -57,7 +57,7 @@ export default function CreatePost({navigation}){
     const changeText = (text) =>{
         // Handling the the changes made on the post text...
         setValue(text);
-        //props.route.params.setPostData(value);
+        setPostData(text);
     }
    
     return(

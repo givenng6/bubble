@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { PostContext } from "../ContextAPIs/PostContext";
 
-export default function PostButton(props){
+export default function PostButton(){
 
-   
+   const {postData, setPostData} = useContext(PostContext)
 
     const onPost = ()=>{
-        console.log(props.postData);
-
-        if(props.postData !== ''){
-            props.setIsPost(true);
-        }
-
-        console.log(props.isPost);
+        console.log(postData);
     }
 
     return(
