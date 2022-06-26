@@ -4,10 +4,12 @@ import { PostContext } from "../ContextAPIs/PostContext";
 
 export default function PostButton(){
 
-   const {postData, setPostData} = useContext(PostContext)
+   const {postData, setPostData, navigation} = useContext(PostContext);
 
     const onPost = ()=>{
         console.log(postData);
+
+        navigation.navigate('Home');
     }
 
     return(

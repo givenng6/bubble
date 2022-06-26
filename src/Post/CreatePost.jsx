@@ -9,42 +9,14 @@ import { PostContext } from "../ContextAPIs/PostContext";
 
 export default function CreatePost({navigation}){
 
-    const {postData, setPostData} = useContext(PostContext);
-
+    const {setPostData, metaData, setMetaData, setNavigation} = useContext(PostContext);
+   
     const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');
     const [textColour, setTextColour] = useState('black');
     const coloursArray = StylePostColours.colours;
 
-    const onPost = ()=>{
-
-        /*
-            * Clicking post button...
-            * Must only be clickable if the post content is not empty...
-        */
-
-        if(value !== ''){
-            
-            let type = 'plain_text';
-
-            if(colour !== 'white'){
-                // The colour is changed, therefore it is a styled post...
-                type = 'style_text';
-            }
-
-            /* 
-                * New post to be sent to the database...
-                * Must add the user details on the post
-            */
-
-            const user = {userID: 'givenng6@gmail.com', username:'Given Mathebula'};
-            const newPost = {type: type, text: value, theme: colour, user: user};
-           
-            // return back to the Explore page...
-            navigation.replace('Home');
-        }
-    }
-
+   
     const onClear = ()=>{
         /*
             * Removing the background colour...
@@ -56,8 +28,16 @@ export default function CreatePost({navigation}){
 
     const changeText = (text) =>{
         // Handling the the changes made on the post text...
+        // Changing the post context...
         setValue(text);
-        setPostData(text);
+        setPostData(value);
+
+        // updating the mataData...
+        // Data about whose is posting...
+        if(metaData === ''){
+            setNavigation(navigation);
+            setMetaData({username: 'Given Mathebula', userID: 'givenng6@gmail.com'});
+        }
     }
    
     return(
