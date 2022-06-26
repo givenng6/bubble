@@ -28,7 +28,7 @@ export default function App() {
         <Stack.Screen name="UniPicker" component={UniPicker} 
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}
-        options = {{headerBackTitle: '', headerTitle: 'Welcome', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
+        options = {{headerBackTitle: '', headerTitle: '', headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
           <Stack.Screen name="CreatePost" component={CreatePost}
           options = {{headerBackTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'},
           headerRight: ()=>(
