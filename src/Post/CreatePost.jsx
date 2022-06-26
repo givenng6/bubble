@@ -42,31 +42,7 @@ export default function CreatePost({navigation}){
    
     return(
         <View style = {styles.Main}>
-            <View style = {{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                borderColor: 'gray',
-                borderWidth: 1,
-                width: '100%',
-                height: 300,
-                backgroundColor: colour,
-                marginVertical: 20,
-                borderRadius: 9,
-                padding: 5
-            }}>
-                <TextInput style = {{
-                    alignSelf: 'center',
-                    fontSize: 20,
-                    color: textColour,
-                    padding: 5
-                }} multiline value={value} onChangeText = {changeText} onChange={changeText} placeholder  = 'Share your thoughts...'/>
-            </View>
-
             <View style = {styles.CompoHolder}>
-            <TouchableOpacity style = {styles.Container}>
-                <AntDesign name="picture" size={30} color="#0FBFBF" />
-                </TouchableOpacity>
                 <TouchableOpacity style = {styles.Container} onPress={onClear}>
                 <MaterialIcons name="layers-clear" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
@@ -88,6 +64,30 @@ export default function CreatePost({navigation}){
                 </ScrollView>
                 
             </View>
+            <View style = {{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                borderColor: 'gray',
+                borderWidth: 1,
+                width: '100%',
+                height: 300,
+                backgroundColor: colour,
+                marginVertical: 20,
+                borderRadius: 9,
+                padding: 5
+            }}>
+                <TextInput style = {{
+                    alignSelf: 'center',
+                    fontSize: 20,
+                    color: textColour,
+                    padding: 5
+                }} multiline value={value} onChangeText = {changeText} onChange={changeText} placeholder  = 'Share your thoughts...'/>
+            </View>
+
+            <TouchableOpacity style = {styles.Container}>
+                <AntDesign name="picture" size={30} color="#0FBFBF" />
+                </TouchableOpacity>
             
         </View>
     );
