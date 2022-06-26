@@ -7,7 +7,7 @@ export default function PostButton(){
    const {postData, setPostData, metaData, setMetaData, setNavigation, navigation} = useContext(PostContext);
 
     const onPost = ()=>{
-       
+       console.log(postData);
         if(postData !== ''){
             /*
                 In a case of text, if not empty...

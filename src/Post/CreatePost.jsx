@@ -30,7 +30,7 @@ export default function CreatePost({navigation}){
         // Handling the the changes made on the post text...
         // Changing the post context...
         setValue(text);
-        setPostData(value);
+        setPostData(text);
 
         // updating the mataData...
         // Data about whose is posting...
@@ -60,7 +60,7 @@ export default function CreatePost({navigation}){
                     fontSize: 20,
                     color: textColour,
                     padding: 5
-                }} multiline value={value} onChangeText = {changeText} placeholder  = 'Share your thoughts...'/>
+                }} multiline value={value} onChangeText = {changeText} onChange={changeText} placeholder  = 'Share your thoughts...'/>
             </View>
 
             <View style = {styles.CompoHolder}>
