@@ -17,7 +17,7 @@ export default function Menu({navigation}){
     let ScreenHeight = Dimensions.get("window").height;
 
     const profileOnClick = ()=>{
-        navigation.navigate('Profile');
+        navigation.navigate('Profile', {user: {username: 'Given Mathebula', userID: 'givenng6@gmail.com'}, isUser: true});
     }
 
     // The icons for the menu items...
@@ -28,6 +28,7 @@ export default function Menu({navigation}){
     const About = <Entypo name="info-with-circle" size={34} color="#0FBFBF" />
     const Settings = <Feather name="settings" size={34} color="#0FBFBF" />
     const Logout = <Entypo name="log-out" size={34} color="#0FBFBF" />
+    const Accomodation = <Entypo name="location" size={34} color="#0FBFBF" />
 
     return(
         <View style = {styles.Main}>
@@ -52,6 +53,7 @@ export default function Menu({navigation}){
                <MenuItems title = 'Communities' icon = {Group}/>
                <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>
                <MenuItems title = 'Courses' icon = {Course}/>
+               <MenuItems title = 'Accomodation' icon = {Accomodation}/>
                <MenuItems title = 'Bursaries' icon = {Bursary}/>
                <MenuItems title = 'About' icon = {About}/>
                <MenuItems title = 'Settings' icon = {Settings}/>
