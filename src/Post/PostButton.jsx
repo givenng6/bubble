@@ -4,12 +4,26 @@ import { PostContext } from "../ContextAPIs/PostContext";
 
 export default function PostButton(){
 
-   const {postData, setPostData, navigation} = useContext(PostContext);
+   const {postData, setPostData, metaData, setMetaData, setNavigation, navigation} = useContext(PostContext);
 
     const onPost = ()=>{
-        console.log(postData);
-
-        navigation.navigate('Home');
+       
+        if(postData !== ''){
+            /*
+                In a case of text, if not empty...
+                Combile the metaData and postData...
+                Send the metaData and the postData to the cloud...
+                Close the create post window...
+                Clear the Post Context... 
+                Clear metaData...
+                Set navigation to null...
+            */
+            setPostData('');
+            setMetaData('');
+            setNavigation(null);
+            navigation.navigate('Home');
+        }
+        
     }
 
     return(
