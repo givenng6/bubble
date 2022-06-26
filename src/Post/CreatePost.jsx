@@ -4,8 +4,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import StyleComponent from "./StyleComponent";
 import StylePostColours from './StylePostColours.json';
+import { useContext } from "react";
+import { PostContext } from "../ContextAPIs/PostContext";
 
-export default function CreatePost(props, {navigation}){
+export default function CreatePost({navigation}){
+
+    const {postData, setPostData} = useContext(PostContext);
 
     const [value, setValue] = useState('');
     const [colour, setColour] = useState('white');

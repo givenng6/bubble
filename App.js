@@ -12,6 +12,7 @@ import Search from './src/Search/Search';
 import CreatePost from './src/Post/CreatePost';
 import PostButton from './src/Post/PostButton';
 import { useState } from 'react';
+import PostContextProvider from './src/ContextAPIs/PostContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
   const [isPost, setIsPost] = useState(false);
 
   return (
+    <PostContextProvider>
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name="SplashScreen" component={SplashScreen} 
@@ -30,14 +32,11 @@ export default function App() {
         <Stack.Screen name="UniPicker" component={UniPicker} 
           options = {{header:()=> null}}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="CreatePost" component={CreatePost} initialParams={{'setPostData': setPostData, 'isPost': isPost}}
-        options = {{headerBackTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'},
-        headerRight: ()=>(
-          <PostButton setPostData = {setPostData} 
-                      postData = {postData}
-                      isPost = {isPost} 
-                      setIsPost = {setIsPost}/>
-        )}}/>
+          <Stack.Screen name="CreatePost" component={CreatePost}
+          options = {{headerBackTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'},
+          headerRight: ()=>(
+            <PostButton />
+          )}}/>
         <Stack.Screen name="Catalogue" component={Catalogue}
           options = {{headerStyle:{backgroundColor: '#0FBFBF'}, headerTintColor: 'white'}}/>
         <Stack.Screen name="Connections" component={Connections}
@@ -50,6 +49,7 @@ export default function App() {
         options = {{headerBackTitle: '', headerTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
       </Stack.Navigator>
     </NavigationContainer>
+    </PostContextProvider>
   );
 }
 
