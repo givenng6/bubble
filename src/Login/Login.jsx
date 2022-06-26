@@ -1,38 +1,40 @@
 import React from "react";
+import { useEffect } from "react";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Button } from 'react-native';
+import { WebView } from 'react-native-webview';
 import { authentication } from "../../Firebase/Firebase-Config";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 
 export default function Login({navigation}){
 
-    const onSignIn =()=>{
-        // Sign In With Google...
+    useEffect(() => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(authentication, provider)
-        .then((userData)=>{
-            // on Sucesss...
-            // userData, contains data of the user....
-            console.log(userData);
-            navigation.navigate('Home');
-        })
-        .catch((error)=>{
-            // on Failure
-            console.log(error);
-        })
-    }
+        //const results = signInWithPopup(authentication, provider);
+      });
+
+   
+
+        const onSignIn =()=>{
+            // Sign In With Google...
+            
+           
+        }
 
     return(
-        <ImageBackground style = {styles.Main} source={require('./assets/background.jpeg')}  resizeMode='cover'>
-            <Button title = 'SignIn' onPress={onSignIn}/>
-        </ImageBackground>
+       
+
+        <WebView style = {styles.Main}>
+             
+        </WebView>
        
     );
 }
 
 const styles = StyleSheet.create({
     Main:{
+        backgroundColor: 'blue',
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
