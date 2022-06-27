@@ -13,6 +13,7 @@ import CreatePost from './src/Post/CreatePost';
 import PostButton from './src/Post/PostButton';
 import PostContextProvider from './src/ContextAPIs/PostContext';
 import MyStories from './src/Stories/MyStories';
+import CreateText from './src/Stories/CreateText';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,7 @@ export default function App() {
         options = {{headerBackTitle: '', headerTitle: '',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="MyStories" component={MyStories}
         options = {{headerBackTitle: '', headerTitle: 'My Stories',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
+        <Stack.Screen name="CreateText" component={CreateText} options = {{header: ()=> null}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </PostContextProvider>
