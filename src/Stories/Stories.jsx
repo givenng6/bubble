@@ -9,7 +9,7 @@ export default function Stories({navigation}){
 
     return(
         <View style = {styles.Main}>
-            <ScrollView horizontal = {true}>
+            <ScrollView horizontal = {true} showsHorizontalScrollIndicator={false}>
             <View style = {styles.OtherStories}>
                 <StoryView title = 'Add Story' navigation = {navigation}/>
                 <StoryView title = 'Given'/>

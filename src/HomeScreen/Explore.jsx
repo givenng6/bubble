@@ -21,7 +21,7 @@ export default function Explore({navigation}){
     return(
         <View style = {styles.Main}>
             <TopNavBar navigation = {navigation} currUser = {currUser}/>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator = {false}>
                 <View style = {styles.Scroller}>
 
                 <Stories navigation={navigation}/>

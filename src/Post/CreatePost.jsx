@@ -47,7 +47,7 @@ export default function CreatePost({navigation}){
                 <MaterialIcons name="layers-clear" size={30} color="#0FBFBF" />
                 </TouchableOpacity>
 
-                <ScrollView horizontal={true}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <View style = {styles.CompoHolder}>
                 {
                     // Adding the colour panel, with all the colours from the JSON file...
