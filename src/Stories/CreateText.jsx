@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import ColourPalate from '../Post/StylePostColours.json';
 
 export default function CreateText(){
@@ -8,32 +10,57 @@ export default function CreateText(){
     // import colours from JSON... 
     const coloursArray = ColourPalate.colours;
 
-    // random number for init the position of the colour...
-    const randomInit = Math.floor(Math.random() * coloursArray.length);
-    const [index, setIndex] = useState(randomInit);
+    // random number to init the position of the colour...
+    const initColor = Math.floor(Math.random() * coloursArray.length);
+    const [index, setIndex] = useState(initColor);
 
-    const [colour, setColour] = useState(coloursArray[randomInit]);
+    const [colour, setColour] = useState(coloursArray[initColor]);
     const [brushColour, setBrushColour] = useState('white');
 
+    const bold = ['normal', '200', '300', '600', '900', 'bold'];
+    const [textState, setTextState] = useState(bold[0]);
+    const [boldIndex, setBoldIndex] = useState(0);
+
     const onChangeColour = ()=>{
-        setColour(coloursArray[index]);
         if(index <= coloursArray.length){
             setIndex(index + 1);
         }else{
             // reset when reach the end of the list...
             setIndex(0);
         }
+        setColour(coloursArray[index]);
+    }
+
+    const onChangeBold = ()=>{
+        if(boldIndex <= bold.length){
+            setBoldIndex(boldIndex + 1);
+        }else{
+            setBoldIndex(0);
+        }
+
+
+        setTextState(bold[boldIndex]);
+
     }
 
     return(
         <View style = {[styles.Main, {backgroundColor: colour}]}>
             <View style = {styles.Canvas}>
-                <TextInput multiline placeholder="Compose a Story" style={{fontSize: 18, color: brushColour}}/>
+                <TextInput multiline placeholder="Compose a Story" style={{fontSize: 18, color: brushColour, fontWeight: textState}}/>
             </View>
            
-            <TouchableOpacity style = {[styles.FAB_Colour, {borderColor: brushColour}]} onPress={onChangeColour}>
+            <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 15}]} onPress={onChangeColour}>
             <FontAwesome name="paint-brush" size={24} color={brushColour} />
             </TouchableOpacity>
+
+            <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 125}]} onPress={onChangeColour}>
+            <MaterialCommunityIcons name="format-color-text" size={34} color={brushColour} />
+            </TouchableOpacity>
+
+            <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 70}]} onPress={onChangeBold}>
+            <MaterialIcons name="format-bold" size={34} color={brushColour} />
+            </TouchableOpacity>
+
         </View>
     );
 }
@@ -51,13 +78,13 @@ const styles = StyleSheet.create({
         //flexWrap: 'wrap',
         //backgroundColor:'gray'
     },
-    FAB_Colour:{
+    FAB:{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         top: 50, 
-        right: 15,
+        //right: 15,
         borderWidth: 1,
         position: 'absolute',
         borderRadius: 100,
