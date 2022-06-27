@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     OtherStories:{
         display: 'flex',
         flexDirection: 'row',
+        //overflow: 'hidden'
     }
 });
 
