@@ -4,10 +4,14 @@ import { Entypo } from '@expo/vector-icons';
 
 export default function StoryView(props){
 
+    const viewMyStories = ()=>{
+        props.navigation.navigate('MyStories');
+    }
+
     if(props.title === 'Add Story'){
         return(
             <View style = {styles.Main}>
-                <TouchableOpacity style = {styles.AddCard}>
+                <TouchableOpacity style = {styles.AddCard} onPress = {viewMyStories}>
                     <Entypo name="plus" size={30} color="gray" />
                 </TouchableOpacity>
                 <Text style = {styles.Caption}>{props.title}</Text>

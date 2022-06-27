@@ -24,7 +24,7 @@ export default function Explore({navigation}){
             <ScrollView>
                 <View style = {styles.Scroller}>
 
-                <Stories />
+                <Stories navigation={navigation}/>
 
                 {feed.map((item, index)=>
                 // Iterating through the list of feeds...

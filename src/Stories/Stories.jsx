@@ -4,14 +4,14 @@ import { ScrollView } from "react-native";
 import StoryView from "./StoryView";
 
 
-export default function Stories(){
+export default function Stories({navigation}){
 
 
     return(
         <View style = {styles.Main}>
             <ScrollView horizontal = {true}>
             <View style = {styles.OtherStories}>
-                <StoryView title = 'Add Story'/>
+                <StoryView title = 'Add Story' navigation = {navigation}/>
                 <StoryView title = 'Given'/>
                 <StoryView title = 'Joseph'/>
                 <StoryView title = 'Sizwe'/>
