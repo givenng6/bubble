@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import ColourPalate from '../Post/StylePostColours.json';
 
 export default function CreateText(){
 
-    const [index, setIndex] = useState(0);
+    // import colours from JSON... 
     const coloursArray = ColourPalate.colours;
-    const [colour, setColour] = useState('gray');
+
+    // random number for init the position of the colour...
+    const randomInit = Math.floor(Math.random() * coloursArray.length);
+    const [index, setIndex] = useState(randomInit);
+
+    const [colour, setColour] = useState(coloursArray[randomInit]);
     const [brushColour, setBrushColour] = useState('white');
 
     const onChangeColour = ()=>{
@@ -22,8 +27,10 @@ export default function CreateText(){
 
     return(
         <View style = {[styles.Main, {backgroundColor: colour}]}>
-            <Text>Hello</Text>
-
+            <View style = {styles.Canvas}>
+                <TextInput multiline placeholder="Compose a Story" style={{fontSize: 18, color: brushColour}}/>
+            </View>
+           
             <TouchableOpacity style = {[styles.FAB_Colour, {borderColor: brushColour}]} onPress={onChangeColour}>
             <FontAwesome name="paint-brush" size={24} color={brushColour} />
             </TouchableOpacity>
@@ -41,6 +48,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 45,
         padding: 15,
+        //flexWrap: 'wrap',
         //backgroundColor:'gray'
     },
     FAB_Colour:{
@@ -55,6 +63,16 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         width: 45,
         height: 45
+    },
+    Canvas:{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        //borderColor: 'gray',
+        //borderWidth: 1,
+        width: '100%',
+        height: '90%',
     }
 });
 
