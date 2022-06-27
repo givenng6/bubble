@@ -13,11 +13,11 @@ export default function MyStories({navigation}){
     return(
     <View style = {styles.Main}>
 
-        <TouchableOpacity style = {styles.FAB_Text} onPress = {onCreateText}>
+        <TouchableOpacity style = {[styles.FAB, {bottom: 120}]} onPress = {onCreateText}>
             <MaterialCommunityIcons name="pencil" size={24} color="white" />
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.FAB_Media}>
+        <TouchableOpacity style = {[styles.FAB, {bottom: 60}]}>
         <MaterialIcons name="add-a-photo" size={24} color="white" />
         </TouchableOpacity>
     </View>
@@ -30,32 +30,20 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         flex: 1
     },
-    FAB_Text:{
+    FAB:{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        bottom: 120, 
-        right: 22,
-        position: 'absolute',
-        backgroundColor: '#0FBFBF',
-        borderRadius: 100,
-        width: 45,
-        height: 45
-    },
-    FAB_Media:{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        bottom: 60, 
+        //bottom: 120, 
         right: 20,
         position: 'absolute',
         backgroundColor: '#0FBFBF',
         borderRadius: 100,
-        width: 50,
-        height: 50
-    }
+        width: 53,
+        height: 53
+    },
+
 });
 
 

@@ -7,6 +7,9 @@ import ColourPalate from '../Post/StylePostColours.json';
 
 export default function CreateText(){
 
+    const [value, setValue] = useState('');
+    const [fontSize, setFontSize] = useState(50);
+
     // import colours from JSON... 
     const coloursArray = ColourPalate.colours;
 
@@ -17,7 +20,7 @@ export default function CreateText(){
     const [colour, setColour] = useState(coloursArray[initColor]);
     const [brushColour, setBrushColour] = useState('white');
 
-    const bold = ['normal', '200', '300', '600', '900', 'bold'];
+    const bold = ['normal', '200','bold'];
     const [textState, setTextState] = useState(bold[0]);
     const [boldIndex, setBoldIndex] = useState(0);
 
@@ -38,15 +41,27 @@ export default function CreateText(){
             setBoldIndex(0);
         }
 
-
         setTextState(bold[boldIndex]);
 
+    }
+
+    const updateChange = (text)=>{
+        setValue(text);
+
+        if(value.length > 75){
+            if(value.length > 150){
+                setFontSize(30);
+            }else{
+                setFontSize(40);
+            }
+        }
     }
 
     return(
         <View style = {[styles.Main, {backgroundColor: colour}]}>
             <View style = {styles.Canvas}>
-                <TextInput multiline placeholder="Compose a Story" style={{fontSize: 18, color: brushColour, fontWeight: textState}}/>
+                <TextInput multiline placeholder="Compose Text" value={value} onChangeText={updateChange} maxLength={255}
+                style={{fontSize: 18, color: brushColour, fontWeight: textState, fontSize: fontSize}}/>
             </View>
            
             <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 15}]} onPress={onChangeColour}>
