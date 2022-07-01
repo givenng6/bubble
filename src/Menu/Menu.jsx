@@ -12,9 +12,9 @@ import { Feather } from '@expo/vector-icons';
 
 export default function Menu({navigation}){
 
+    // must get username... 
     let username = "Given Mathebula";
     let initial = username[0];
-    let ScreenHeight = Dimensions.get("window").height;
 
     const profileOnClick = ()=>{
         navigation.navigate('Profile', {user: {username: 'Given Mathebula', userID: 'givenng6@gmail.com'}, isUser: true});

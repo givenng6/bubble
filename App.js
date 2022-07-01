@@ -50,7 +50,8 @@ export default function App() {
         <Stack.Screen name="MyStories" component={MyStories}
         options = {{headerBackTitle: '', headerTitle: 'My Stories',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="CreateText" component={CreateText} options = {{header: ()=> null}}/>
-        <Stack.Screen name = "PopBubble" component={PopBubble} />
+        <Stack.Screen name = "PopBubble" component={PopBubble} 
+          options = {{header: ()=> null}}/>
 
 
       </Stack.Navigator>
