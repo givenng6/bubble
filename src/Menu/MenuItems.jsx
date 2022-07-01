@@ -3,9 +3,20 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const MenuItems = (props)=>{
 
+    const onOpen = ()=>{
+        
+        switch (props.option){
+            case 'pop_bubble':
+                props.navigation.navigate('PopBubble');
+                break;
+            
+            default:
+                // do nothing... 
+        }
+    }
     
     return(
-        <TouchableOpacity style = {styles.Main}>
+        <TouchableOpacity style = {styles.Main} onPress={onOpen}>
             {props.icon}
             <Text style = {styles.Name}>{props.title}</Text>
         </TouchableOpacity>

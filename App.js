@@ -14,6 +14,7 @@ import PostButton from './src/Post/PostButton';
 import PostContextProvider from './src/ContextAPIs/PostContext';
 import MyStories from './src/Stories/MyStories';
 import CreateText from './src/Stories/CreateText';
+import PopBubble from './src/PopBubble/PopBubble';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +50,9 @@ export default function App() {
         <Stack.Screen name="MyStories" component={MyStories}
         options = {{headerBackTitle: '', headerTitle: 'My Stories',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="CreateText" component={CreateText} options = {{header: ()=> null}}/>
+        <Stack.Screen name = "PopBubble" component={PopBubble} />
+
+
       </Stack.Navigator>
     </NavigationContainer>
     </PostContextProvider>

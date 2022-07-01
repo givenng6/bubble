@@ -48,14 +48,14 @@ export default function Menu({navigation}){
                             flexDirection: 'row',
                             flexWrap: 'wrap',
                             justifyContent: 'center'}}>
-               <MenuItems title = 'Communities' icon = {Group}/>
-               <MenuItems title = 'Pop the Bubble' icon = {PopBubble}/>
-               <MenuItems title = 'Courses' icon = {Course}/>
-               <MenuItems title = 'Accomodation' icon = {Accomodation}/>
-               <MenuItems title = 'Bursaries' icon = {Bursary}/>
-               <MenuItems title = 'About' icon = {About}/>
-               <MenuItems title = 'Settings' icon = {Settings}/>
-               <MenuItems title = 'Log Out' icon = {Logout}/>
+               <MenuItems title = 'Communities' icon = {Group} option = '' navigation = {navigation}/>
+               <MenuItems title = 'Pop the Bubble' icon = {PopBubble} option = 'pop_bubble'navigation = {navigation}/>
+               <MenuItems title = 'Courses' icon = {Course} option = '' navigation = {navigation}/>
+               <MenuItems title = 'Accomodation' icon = {Accomodation} option = '' navigation = {navigation}/>
+               <MenuItems title = 'Bursaries' icon = {Bursary} option = '' navigation = {navigation}/>
+               <MenuItems title = 'About' icon = {About} option = '' navigation = {navigation}/>
+               <MenuItems title = 'Settings' icon = {Settings} option = '' navigation = {navigation}/>
+               <MenuItems title = 'Log Out' icon = {Logout} option = '' navigation = {navigation}/>
 
             </View>
             </ScrollView>
