@@ -1,14 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 
 export default function OptionsCard({icon, title}){
 
     return(
-        <View style = {styles.Main}>
+        <TouchableOpacity style = {styles.Main}>
             {icon}
-            <Text>{title}</Text>
-        </View>
+            <Text style = {styles.Text}>{title}</Text>
+        </TouchableOpacity>
     );
 }
 
@@ -17,11 +17,16 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: 'white',
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 120,
         alignItems: 'center',
         justifyContent: 'center',
+        margin: 4,
         borderRadius: 18
+    },
+    Text:{
+        fontWeight: 'bold',
+        fontSize: 19
     }
 
 });
