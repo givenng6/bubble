@@ -8,11 +8,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default function PopBubble(){
 
     const iconSize = 90;
-    const userIcon = <Feather name="user" size={iconSize} color="black" />
-    const marketIcon = <MaterialCommunityIcons name="store-marker-outline" size={iconSize} color="black" />
+    const iconColor = 'yellow';
+    const userIcon = <Feather name="user" size={iconSize} color={iconColor} />
+    const marketIcon = <MaterialCommunityIcons name="store-marker-outline" size={iconSize} color={iconColor} />
 
     return(
-        <LinearGradient style = {styles.Root} colors={['#1560BD', '#F6ADC6', '#FF2E2E']}>
+       
             <View style = {styles.Main}>
                 <Text>POP the Bubble</Text>
                 <View style = {styles.Window}>
@@ -26,7 +27,7 @@ export default function PopBubble(){
                 
                
             </View>
-        </LinearGradient>
+       
     );
 }
 
