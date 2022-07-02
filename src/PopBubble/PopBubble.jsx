@@ -7,7 +7,10 @@ export default function PopBubble(){
         <LinearGradient style = {styles.Root} colors={['#1560BD', '#F6ADC6', '#FF2E2E']}>
             <View style = {styles.Main}>
                 <Text>POP the Bubble</Text>
+                <View style = {styles.Window}>
                 <Text style = {styles.Slogan}>Ready to meet the ideal partner? Are you available and ready to pop the bubble?</Text>
+                </View>
+               
             </View>
         </LinearGradient>
     );
@@ -31,6 +34,13 @@ const styles = StyleSheet.create({
         color: 'white',
         padding: 15
 
+    },
+    Window:{
+        display: 'flex',
+        flexDirection: 'column',
+        borderWidth: 1,
+        borderRadius: 12,
+        margin: 15
     }
 });
 
