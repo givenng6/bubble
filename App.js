@@ -15,6 +15,7 @@ import PostContextProvider from './src/ContextAPIs/PostContext';
 import MyStories from './src/Stories/MyStories';
 import CreateText from './src/Stories/CreateText';
 import PopBubble from './src/PopBubble/PopBubble';
+import MarketSwitch from './src/PopBubble/MarketSwitch';
 
 const Stack = createNativeStackNavigator();
 
@@ -51,9 +52,10 @@ export default function App() {
         options = {{headerBackTitle: '', headerTitle: 'My Stories',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="CreateText" component={CreateText} options = {{header: ()=> null}}/>
         <Stack.Screen name = "PopBubble" component={PopBubble} 
-          options = {{header: ()=> null}}/>
-
-
+          options = {{headerBackTitle: '', headerTitle: '',headerTintColor: '#0FBFBF',headerStyle:{backgroundColor: 'pink'}, 
+          headerRight: ()=>{
+          <MarketSwitch/>  
+          }}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </PostContextProvider>
