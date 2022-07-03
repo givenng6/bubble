@@ -16,7 +16,6 @@ export default function PopBubble(){
     return(
        
             <View style = {styles.Main}>
-                <Text>POP the Bubble</Text>
                 <View style = {styles.Window}>
                 <Text style = {styles.Slogan}>Ready to meet the ideal partner? Are you available and ready to pop the bubble?</Text>
                 </View>
@@ -33,15 +32,9 @@ export default function PopBubble(){
 }
 
 const styles = StyleSheet.create({
-    Root:{
+   Main:{
         display: 'flex',
         flex: 1,
-        flexDirection: 'column',
-    },
-    Main:{
-        display: 'flex',
-        flex: 1,
-        marginTop: 40,
         flexDirection: 'column',
     },
     Slogan:{
