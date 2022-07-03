@@ -26,7 +26,6 @@ export default function PopBubble(){
                 <OptionsCard icon = {marketIcon} title = 'Market'/>
                 </View>
                 
-                <MarketSwitch />
                
             </View>
        

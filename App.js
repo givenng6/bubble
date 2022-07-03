@@ -52,10 +52,10 @@ export default function App() {
         options = {{headerBackTitle: '', headerTitle: 'My Stories',headerTintColor: 'white',headerStyle:{backgroundColor: '#0FBFBF'}}}/>
         <Stack.Screen name="CreateText" component={CreateText} options = {{header: ()=> null}}/>
         <Stack.Screen name = "PopBubble" component={PopBubble} 
-          options = {{headerBackTitle: '', headerTitle: '',headerTintColor: '#0FBFBF',headerStyle:{backgroundColor: 'pink'}, 
-          headerRight: ()=>{
+          options = {{headerBackTitle: '', headerTitle: '',headerTintColor: '#0FBFBF',headerStyle:{backgroundColor: '#F6ADC6'}, 
+          headerRight: ()=>(
           <MarketSwitch/>  
-          }}}/>
+          )}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </PostContextProvider>
