@@ -16,4 +16,3 @@ function MarketSwitchContextProvider(props){
 }
 
 export default MarketSwitchContextProvider;
-

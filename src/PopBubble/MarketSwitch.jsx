@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext} from "react";
 import { Switch, StyleSheet } from "react-native";
+import { MarketSwitchContext } from "../ContextAPIs/MarketSwitchContext";
 
 export default function MarketSwitch(){
 
-    const [onMarket, setOnMarket] = useState(false);
+    // getting the values from the switch context API...
+    const {onMarket, setOnMarket} = useContext(MarketSwitchContext);
 
     const onChange = ()=>{
         setOnMarket(!onMarket);

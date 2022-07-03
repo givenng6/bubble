@@ -16,12 +16,14 @@ import MyStories from './src/Stories/MyStories';
 import CreateText from './src/Stories/CreateText';
 import PopBubble from './src/PopBubble/PopBubble';
 import MarketSwitch from './src/PopBubble/MarketSwitch';
+import MarketSwitchContextProvider from './src/ContextAPIs/MarketSwitchContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 
   return (
+    <MarketSwitchContextProvider>
     <PostContextProvider>
     <NavigationContainer>
       <Stack.Navigator>
@@ -59,6 +61,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     </PostContextProvider>
+    </MarketSwitchContextProvider>
   );
 }
 
