@@ -10,7 +10,7 @@ export default function MoreModal(props){
 
     return(
 
-       <Modal visible = {props.visible} transparent={true} animationType= 'slide' onRequestClose={onClose}>
+       <Modal visible = {props.visible} transparent={true} animationType= 'fade' onRequestClose={onClose}>
             <View style = {styles.Main}>
                 <View style = {styles.Content}>
                     <ModalClickables colour = 'black' title = 'View Profile' setVisible = {props.setVisible}/>

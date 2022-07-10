@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -56,6 +56,8 @@ export default function CreateText(){
             }
         }
     }
+
+    // implement kayboard avoiding view... 
 
     return(
         <View style = {[styles.Main, {backgroundColor: colour}]}>
