@@ -20,9 +20,15 @@ export default function CreateText(){
     const [colour, setColour] = useState(coloursArray[initColor]);
     const [brushColour, setBrushColour] = useState('white');
 
+    // Text Specifics... 
     const bold = ['normal', '200','bold'];
     const [textState, setTextState] = useState(bold[0]);
     const [boldIndex, setBoldIndex] = useState(0);
+
+    const textColoursArray = ["white", "white", "#FC5185", "#3498DB"];
+    const [textColourIndex, setTextColourIndex] = useState(0);
+
+    const [textColor, setTextColor] = useState(textColoursArray[index]);
 
     const onChangeColour = ()=>{
         if(index <= coloursArray.length){
@@ -32,6 +38,15 @@ export default function CreateText(){
             setIndex(0);
         }
         setColour(coloursArray[index]);
+    }
+
+    const onChangeTextColor = ()=>{
+            if(textColourIndex <= textColoursArray.length){
+                setTextColourIndex(textColourIndex + 1);
+            }else{
+                setTextColourIndex(0);
+            }
+            setTextColor(textColoursArray[textColourIndex]);
     }
 
     const onChangeBold = ()=>{
@@ -57,21 +72,21 @@ export default function CreateText(){
         }
     }
 
-    // implement kayboard avoiding view... 
+    // implement kayboard avoiding view...  
 
     return(
         <View style = {[styles.Main, {backgroundColor: colour}]}>
             <View style = {styles.Canvas}>
                 <TextInput multiline placeholder="Compose Text" value={value} onChangeText={updateChange} maxLength={255}
-                style={{fontSize: 18, color: brushColour, fontWeight: textState, fontSize: fontSize}}/>
+                style={{fontSize: 18, color: textColor, fontWeight: textState, fontSize: fontSize}}/>
             </View>
            
             <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 15}]} onPress={onChangeColour}>
             <FontAwesome name="paint-brush" size={24} color={brushColour} />
             </TouchableOpacity>
 
-            <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 125}]} onPress={onChangeColour}>
-            <MaterialCommunityIcons name="format-color-text" size={34} color={brushColour} />
+            <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 125}]} onPress={onChangeTextColor}>
+            <MaterialCommunityIcons name="format-color-text" size={34} color={textColor} />
             </TouchableOpacity>
 
             <TouchableOpacity style = {[styles.FAB, {borderColor: brushColour, right: 70}]} onPress={onChangeBold}>
